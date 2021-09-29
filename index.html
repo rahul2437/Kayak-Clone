@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- Boxicons CDN Link -->
+    <link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
+    <!-- style.css link -->
+    <link rel="stylesheet" href="styles/compostyles.css">
+</head>
+
+<body>
+    <div class="navbar"></div>
+    <div class="sidebar"></div>
+    <div id="bodyCont" class="container">
+        
+    </div>
+    <!-- <div class="footer">
+
+    </div> -->
+</body>
+
+</html>
+<script type="module">
+    import navbar from './scripts/components/navbar.js';
+    document.querySelector('.navbar').innerHTML = navbar();
+    import sidebar from './scripts/components/sidebar.js';
+    document.querySelector('.sidebar').innerHTML = sidebar();
+    // import footer from './scripts/components/footer.js';
+    // document.querySelector('.footer').innerHTML = footer();
+    let mbtn = document.querySelector('#menubtn');
+    let bodcont = document.querySelector('#bodyCont');
+    let navbar1 = document.querySelector('.navbar');
+    let footer1 = document.querySelector('.footer');
+    let sidebar1 = document.querySelector('.sidebar');
+    let spanele = document.querySelectorAll('.sidebar-list')
+    let spanArray = Array.from(spanele);
+    spanArray.forEach(e => {
+        e.style.display = 'none';
+        sidebar1.style.width = '90px'
+        bodcont.style.left = '90px';
+        navbar1.style.left = '90px';
+        mbtn.addEventListener('click',()=>{
+            if(e.style.display=='block'){
+                e.style.display = 'none';
+                sidebar1.style.width = '90px'
+                bodcont.style.left = '110px';
+                navbar1.style.left = '90px';
+                footer1.style.left = '90px';
+            }
+            else{
+                e.style.display = 'block';
+                sidebar1.style.width = '250px'
+                bodcont.style.left = '270px';
+                navbar1.style.left = '250px';
+                footer1.style.left = '250px';
+            }
+        });
+    });
+</script>

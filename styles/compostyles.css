@@ -1,0 +1,140 @@
+:root {
+    --bgcolor: #ffffff;
+    --hover: #e6ebef;
+    --keel: #0b7b99;
+    --pcol: #000;
+    --footer: #212a30;
+}
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    list-style: none;
+}
+
+body {
+    width: 100%;
+    position: relative;
+}
+
+
+/* SIDEBAR CSS */
+
+.sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 240px;
+    background-color: var(--bgcolor);
+    padding: 6px 12px;
+    border-right: 1px solid var(--pcol);
+}
+
+#menubtn {
+    /* position:absolute; */
+    color: var(--pcol);
+    left: 6px;
+    top: 6px;
+    font-size: 30px;
+    height: 50px;
+    width: 50px;
+    text-align: center;
+    line-height: 50px;
+}
+
+#menubtn:hover {
+    background-color: var(--hover);
+    border-radius: 6px;
+}
+
+.sidebar ul {
+    margin-top: 20px;
+}
+.sidebar ul hr{
+    margin: 10px 0px;
+}
+.sidebar ul li {
+    height: 50px;
+    margin: 0 5px;
+}
+
+.sidebar ul li a {
+    color: var(--pcol);
+    text-decoration: none;
+    align-items: center;
+    display: flex;
+    width: 100%;
+}
+
+.sidebar ul li a:hover {
+    background-color: var(--hover);
+    border-radius: 5px;
+}
+
+.sidebar ul li a i {
+    height: 50px;
+    min-width: 50px;
+    line-height: 50px;
+    border-radius: 12px;
+    text-align: center;
+}
+
+.sidebar-list {
+    display: block;
+}
+
+
+/* BODY CSS */
+
+.container {
+    position: absolute;
+    top: 90px;
+    right: 0;
+}
+
+
+/* NAVBAR CSS */
+.navbar{
+    position: fixed;
+    top: 0;
+    right: 0;
+    display: flex;
+    background-color: var(--bgcolor);
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid var(--pcol);
+    height: 70px;
+    padding: 0rem 1rem;
+    z-index: 1;
+}
+.content{
+    display: flex;
+    flex-direction: row;
+}
+.content div{
+    padding: 10px;
+}
+.vr{
+    border: 1px solid var(--pcol);
+}
+.logo img{
+    width: 130px;
+}
+
+/* FOOTER CSS */
+
+.footer{
+    background-color: var(--footer);
+    height: 590px;
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    left: 90px;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    color: var(--bgcolor);
+    padding: 1rem 3rem;
+}
