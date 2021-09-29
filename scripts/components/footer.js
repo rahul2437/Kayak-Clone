@@ -1,3 +1,4 @@
+
 function footer(){
 
     return ` <footer class="page_footer p-5 m-5 text-center">
@@ -60,5 +61,6 @@ function footer(){
 `
 
 }
+
 
 export default footer;
