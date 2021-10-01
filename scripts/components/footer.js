@@ -55,7 +55,7 @@ function footer(){
     
     </div>
     <div class="row">
-        <div class="col-12 text-center"><img src="./images/footer.JPG" alt=""></div>
+        <div class="col-12 text-center"><img id="footer_img" src="../images/footer.JPG" alt=""></div>
     </div>
 </footer>
 `

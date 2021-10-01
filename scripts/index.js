@@ -1,4 +1,5 @@
 
+document.getElementById("footer_img").src="./images/footer.JPG";
 
 function create_local_stg(){
    var days=number_of_day();
