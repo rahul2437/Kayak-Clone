@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rent a car</title>
+  <link rel="stylesheet" href="/styles/compostyles.css">
+  <link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
+  <link rel="stylesheet" href="../styles/carsytles.css">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet">
+</head>
+<body>
+  <div class="navbar">
+        
+  </div>
+  <div class="sidebar"></div>
+  <div id="bodyCont" class="container">
+    <input id="cityName" type="text"/>
+    <button id="searchBtn" onclick="getData()">Search</button>
+    <div id="putCarData">
+      
+    </div>
+  </div>
+</body>
+<script type="module">
+  import carnavbar from '../scripts/components/carnavbar.js';
+  document.querySelector('.navbar').innerHTML = carnavbar();
+  import sidebar from '../scripts/components/sidebar.js';
+  document.querySelector('.sidebar').innerHTML = sidebar();
+  // import footer from './scripts/components/footer.js';
+  // document.querySelector('.footer').innerHTML = footer();
+  let mbtn = document.querySelector('#menubtn');
+  let bodcont = document.querySelector('#bodyCont');
+  let navbar1 = document.querySelector('.navbar');
+  let footer1 = document.querySelector('.footer');
+  let sidebar1 = document.querySelector('.sidebar');
+  let spanele = document.querySelectorAll('.sidebar-list')
+  let spanArray = Array.from(spanele);
+  spanArray.forEach(e => {
+      e.style.display = 'none';
+      sidebar1.style.width = '90px'
+      bodcont.style.left = '90px';
+      navbar1.style.left = '90px';
+      mbtn.addEventListener('click',()=>{
+          if(e.style.display=='block'){
+              e.style.display = 'none';
+              sidebar1.style.width = '90px'
+              bodcont.style.left = '110px';
+              navbar1.style.left = '90px';
+              footer1.style.left = '90px';
+          }
+          else{
+              e.style.display = 'block';
+              sidebar1.style.width = '250px'
+              bodcont.style.left = '270px';
+              navbar1.style.left = '250px';
+              footer1.style.left = '250px';
+          }
+      });
+  });
+</script>
+<script src="../scripts/app.js"></script>
+</html>

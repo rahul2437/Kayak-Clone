@@ -18,7 +18,7 @@ function sidebar() {
                 </a>
             </li>
             <li>
-                <a href="#">
+                <a href="pages/carrental.html">
                     <i class="bx bxs-car"></i>
                     <span class="sidebar-list">Car Rental</span>
                 </a>

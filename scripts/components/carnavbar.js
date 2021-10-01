@@ -1,10 +1,9 @@
-
-function navbar() {
+function carnavbar() {
   return `
   
   <div class="logo">
-            <a href="index.html">
-            <img src="images/Kayak_Logo.svg" alt="">
+            <a href="../index.html">
+            <img src="../images/Kayak_Logo.svg" alt="">
             </a>
         </div>
         <div class="content">
@@ -17,5 +16,4 @@ function navbar() {
   
   `
 }
-
-export default navbar;
+export default carnavbar;
