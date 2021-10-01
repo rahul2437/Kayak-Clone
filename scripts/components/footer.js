@@ -1,7 +1,7 @@
 
 function footer(){
 
-    return ` <footer class="page_footer p-5 m-5 text-center">
+    return ` <footer class="page_footer p-5 me-5 text-center">
     <div class="row h5 mb-3">
         <div class="col-3">Company</div>
         <div class="col-3">Contact</div>

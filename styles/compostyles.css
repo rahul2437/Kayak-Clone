@@ -87,7 +87,7 @@ body {
 
 /* BODY CSS */
 
-.container {
+.container_custom {
     position: absolute;
     top: 90px;
     right: 0;
