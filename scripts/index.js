@@ -1,4 +1,31 @@
 
+
+function create_local_stg(){
+   var days=number_of_day();
+     var lcl_stg= { 
+         num_days:days,
+         city:obj_city
+     }
+     
+localStorage.setItem('search_car',JSON.stringify(lcl_stg));
+
+}
+
+
+function number_of_day(){
+
+    let input_calendar=document.getElementById("input_calendar").value;
+    var date1 = new Date(input_calendar.slice(0,11));
+    var date2 = new Date(input_calendar.slice(22,33));
+      
+    var Difference_In_Time = date2.getTime() - date1.getTime();
+      
+    
+    var Difference_In_Days = Difference_In_Time / (1000 * 3600 * 24);
+      return Difference_In_Days;
+}
+
+
 function Showdropdown(){
    
     let x=document.querySelector("#pop_div_search_bar_drop_off");
@@ -54,8 +81,9 @@ function close_all(){
         document.querySelector("#pop_div_search_bar_drop_off").className="d-none";
         document.getElementById("pop_div_search_bar_age").className="d-none";
     }
-
+var obj_city;
     function display_val(el){
+        obj_city=el;
         console.log(el);
         document.getElementById("index_input_city").value=el.city+" "+el.state;
         div_cont.innerHTML="";
