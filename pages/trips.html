@@ -10,7 +10,7 @@
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-
+<!-- <link rel="stylesheet" href="../styles/compostyles.css"> -->
     <title>Hello, world!</title>
 
 </head>
@@ -52,6 +52,11 @@
     </style>
 
 <body>
+    <!-- <div class="navbar">
+        
+    </div>
+    <div class="sidebar"></div> -->
+    <div id="bodyCont" class="container">
     <div id="background_div" class="bg-light">
 
 
@@ -231,11 +236,50 @@
     </div>
 
     <div id="footer"></div>
+    </div>
 </body>
-<script type="module"> import footer from "../scripts/components/footer.js";
+<script type="module"> 
+
+    import carnavbar from '../scripts/components/carnavbar.js';
+    document.querySelector('.navbar').innerHTML = carnavbar();
+    import sidebar from '../scripts/components/sidebar.js';
+    document.querySelector('.sidebar').innerHTML = sidebar();
+    // import footer from './scripts/components/footer.js';
+    // document.querySelector('.footer').innerHTML = footer();
+    let mbtn = document.querySelector('#menubtn');
+    let bodcont = document.querySelector('#bodyCont');
+    let navbar1 = document.querySelector('.navbar');
+    let footer1 = document.querySelector('.footer');
+    let sidebar1 = document.querySelector('.sidebar');
+    let spanele = document.querySelectorAll('.sidebar-list')
+    let spanArray = Array.from(spanele);
+    spanArray.forEach(e => {
+        e.style.display = 'none';
+        sidebar1.style.width = '90px'
+        bodcont.style.left = '90px';
+        navbar1.style.left = '90px';
+        mbtn.addEventListener('click',()=>{
+            if(e.style.display=='block'){
+                e.style.display = 'none';
+                sidebar1.style.width = '90px'
+                bodcont.style.left = '110px';
+                navbar1.style.left = '90px';
+                footer1.style.left = '90px';
+            }
+            else{
+                e.style.display = 'block';
+                sidebar1.style.width = '250px'
+                bodcont.style.left = '270px';
+                navbar1.style.left = '250px';
+                footer1.style.left = '250px';
+            }
+        });
+    });
+
+    import footer from "../scripts/components/footer.js";
     let div_cont = document.querySelector('#footer');
     div_cont.innerHTML = footer();
 //  document.body.append(div_cont);
-</script>
 
+  </script>
 </html>

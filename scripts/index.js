@@ -64,7 +64,8 @@ function driver_age(){
     document.getElementById("pop_div_search_bar_age").className="d-none";
 }
 function custom_driver_age(){
-   let val= document.getElementById("others").innerText;
+   let val= document.getElementById("others").value;
+   
     document.getElementById("driver_age").innerText=val;
 }
 
