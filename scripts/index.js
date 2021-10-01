@@ -1,11 +1,94 @@
-function Showdropdown(ele){
-    let x=document.querySelector("#pop_div_search_bar_drop_off");
-    if(x.className==="width-10 d-block")
-      x.className="width-10 d-none";
-      else
-      x.className="width-10 d-block"
+
+
+function create_local_stg(){
+   var days=number_of_day();
+     var lcl_stg= { 
+         num_days:days,
+         city:obj_city
+     }
+     
+localStorage.setItem('search_car',JSON.stringify(lcl_stg));
+
 }
 
+
+function number_of_day(){
+
+    let input_calendar=document.getElementById("input_calendar").value;
+    var date1 = new Date(input_calendar.slice(0,11));
+    var date2 = new Date(input_calendar.slice(22,33));
+      
+    var Difference_In_Time = date2.getTime() - date1.getTime();
+      
+    
+    var Difference_In_Days = Difference_In_Time / (1000 * 3600 * 24);
+      return Difference_In_Days;
+}
+
+
+function Showdropdown(){
+   
+    let x=document.querySelector("#pop_div_search_bar_drop_off");
+    if(x.className==="d-block"){
+      x.className="d-none";
+      
+    }
+      else{
+      x.className="d-block";
+      document.body.setAttribute('onclick', close_all);
+      console.log("hi att2");
+      }
+}
+function show_drop_dn()
+{
+    let x=document.querySelector("#pop_div_search_bar_age");
+    if(x.className==="d-block"){
+      x.className="d-none";
+      
+    }
+      else{
+       
+      x.className="d-block";
+     
+      document.body.setAttribute('onclick', close_all);
+      console.log("hi att1");
+      }
+
+}
+
+function driver_age(){
+    //console.log(e.target.labels[0].innerText);
+        document.getElementById("driver_age").innerText="26-65";
+
+    document.getElementById("pop_div_search_bar_age").className="d-none";
+}
+function custom_driver_age(){
+   let val= document.getElementById("others").innerText;
+    document.getElementById("driver_age").innerText=val;
+}
+
+
+function select(e){
+    
+let x=document.getElementById("change_drop-off");
+x.innerText=e.target.innerText;
+document.querySelector("#pop_div_search_bar_drop_off").className="d-none";
+}
+function close_all(){
+    
+    console.log("hi closed");
+ //   document.body.removeAttribute('click',close_all);
+        document.querySelector("#pop_div_search_bar_drop_off").className="d-none";
+        document.getElementById("pop_div_search_bar_age").className="d-none";
+    }
+var obj_city;
+    function display_val(el){
+        obj_city=el;
+        console.log(el);
+        document.getElementById("index_input_city").value=el.city+" "+el.state;
+        div_cont.innerHTML="";
+
+    }
 
 $(function() {   
     $('.datetimerange').daterangepicker({
@@ -16,5 +99,54 @@ $(function() {
          }
      });
  });
+ async function search(){
+ let input=document.getElementById("index_input_city").value;
+let data = await get_cities(input); 
+display(data);
+}
+async function get_cities(input){
+    let res= await fetch(`https://kayaak-clone-backend.herokuapp.com/cities?name=${input}`);
+    let data=await res.json();
+    console.log(data);
+    return data;
+}
 
- 
+
+let div_cont=document.createElement('div');
+div_cont.setAttribute("class","container_search")
+
+
+
+
+function display(data){
+
+    div_cont.innerHTML="";
+    data.forEach((el)=>{
+
+
+let a=document.createElement('a');
+a.href="#"; 
+a.addEventListener("click",()=>{
+    display_val(el);
+});                                    
+a.setAttribute("class","anchor_none");
+
+let icon=document.createElement('i')
+icon.setAttribute("class","fas fa-city float-start display-7 m-3");                                     
+
+let h3=document.createElement('h3')
+h3.innerText=el.city;
+let p=document.createElement('p');
+p.innerText=el.state;
+p.setAttribute("class","ms-5");
+let hr=document.createElement("hr");
+
+a.append(icon,h3,p,hr);
+
+div_cont.append(a);
+
+});
+let search_dropdown=document.getElementById("search_dropdown");
+search_dropdown.append(div_cont);
+}
+
