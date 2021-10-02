@@ -17,7 +17,7 @@ function create_local_stg() {
     }
 
     localStorage.setItem('search_car', JSON.stringify(lcl_stg));
-
+    console.log(obj_city);
 }
 
 
