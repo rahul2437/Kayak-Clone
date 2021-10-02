@@ -33,7 +33,7 @@
     <link rel="stylesheet" href="styles/sign-in.css">
     
     
-    <title>Hello, world!</title>
+    <title>Car Rentals: Find &amp; Book Self Drive Car Rental | KAYAK</title>
     
     
     <script src="./scripts/index.js"></script>
@@ -43,18 +43,18 @@
     <div class="sidebar"></div>
     <div id="bodyCont" class="container_custom p-5">
         <div class="container-fluid ">
-            <h1>Search hundreds of car rental sites at once.</h1>
+            <h1 class="index_main_heading">Search hundreds of car rental sites at once.</h1>
         </div>
 
 
         <div id="index_cont_search" class="container-fluid ">
             <div id=" select_drop-off" class="d-inline" onclick="Showdropdown()">
-                <span id="change_drop-off">Same drop-off</span>
+                <span class="index_main_heading" id="change_drop-off">Same drop-off</span>
                 <span>˅</span>
             </div>
             <div id="select_age"class="button d-inline ms-5" onclick="show_drop_dn()">
                 <span >Driver's age: -</span>
-                <span id="driver_age"></spanid>
+                <span class="index_main_heading" id="driver_age"></spanid>
                 <span>˅</span>
             </div>
         </div>
@@ -97,7 +97,7 @@
                         <h5 class="d-inline"><input id="index_input_city" oninput="debounce()"
                                 class="  w-100 form-control border-0 d-inline bg-secondary bg-gradient bg-opacity-25 "
                                 type="text" placeholder="From ?"> </input></h5>
-                            <div id="search_container"class="container_search"></div>
+                            <div id="search_container"class="container_search rounded-bottom"></div>
 
                     </div>
 
@@ -140,16 +140,27 @@
                 </div>
                 <div class="col-5 pt-5">
                     <div class="d-inline border rounded h5 py-1 px-2 "><i
-                            class="fas fa-envelope"></i><input class="border-0  ps-2"
+                            class="fas fa-envelope"></i><form onsubmit="register_email()" class="d-inline">
+                                <input id="register_email_input" type="email" class="border-0  ps-2"
                             placeholder="Enter your Email address" /></div>
-                    <button id="" type="button" class=" btn-outline-black  ">Let's do this</button>
+                    <button id="" type="submit" class=" btn-outline-black me-4  ">Let's do this</button>
+                            </form>
+                   <div id="loading_display" class="d-none"> 
+                       <div class="spinner-border spinner-border-sm" role="status">
+                        <span class="sr-only">Loading...</span>
+                      </div>
+                      <div class="spinner-grow spinner-grow-sm" role="status">
+                        <span class="sr-only">Loading...</span>
+                      </div>
+                    </div>
+                    <p id="completed_loading" class="d-none"><img id="tick_icon" src="images/tick.png">email is successfully registered.</p>
                 </div>
             </div>
         </div>
 
         <div id="index_bg_image_cont" class="container w-100  px-5 img-fluid">
 
-            <div class="bg-white rounded w-50 px-5 mt-5 position-relative top-50 start-50 translate-middle-x">
+            <div class="bg-white rounded_custom-5 w-50 px-5 py-5 position-relative top-50 start-50 translate-middle-x">
                 <h3>Enjoy the open road</h3>
                 <p>Find the right car hire for wherever your trip takes you</p>
             </div>

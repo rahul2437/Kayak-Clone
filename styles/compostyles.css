@@ -153,3 +153,6 @@ body {
     color: var(--bgcolor);
     padding: 1rem 3rem;
 }
+input[type="email"]:invalid{
+    color:red;
+} 
