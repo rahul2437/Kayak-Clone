@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Book your car</title>
+  <link rel="stylesheet" href="/styles/compostyles.css">
+  <link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
+  <link rel="stylesheet" href="../styles/carsytles.css">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet">
+  <link rel="stylesheet" href="../styles/booking.css">
+</head>
+<body>
+  <div class="navbar">
+        
+  </div>
+  <div class="sidebar"></div>
+  <div id="bodyCont" class="container">
+    
+    <div id="showCarBookingData">
+      <div id="bookedcardetails">
+        <strong>Car Details</strong>
+        <div>
+          <div>
+            <h2>Hyundai i10</h2>
+            <ul id="greentext">
+              <li>Unlimited Kilometers</li>
+              <li>Free cancellation</li>
+            </ul>
+            <ul>
+              <li>4 people, </li>
+              <li>1 Bag, </li>
+              <li>4 Doors, </li>
+              <li>Manual transmission, </li>
+              <li>Air conditioning</li>
+            </ul>
+          </div>
+          <div id="carImage"><img src="https://www.kayak.co.in/h/run/api/image?width=178&crop=true&url=/carimages/generic/02_economy_coolgrey.png" alt=""></div>
+        </div>
+        <strong id="pickup">Pick-up:</strong>
+        <hr>
+        <div id="address">
+          <img src="https://www.kayak.co.in/rimg/provider-logos/cars/h/europcar.png?width=60&crop=true" alt="">
+          <p>Address</p>
+        </div>
+      </div>
+      <div id="hirerDetails">
+        <strong>Hirer Details</strong>
+        <form id="hirerForm">
+          <input id="firstName" type="text" placeholder="FirstName" required>
+          <input id="lastName" type="text" placeholder="LastName" required>
+          <input id="eMail" type="text" placeholder="Email" required>
+          <input id="userPhone" type="text" placeholder="Phone" required>
+        </form>
+      </div>
+      <div id="paymentDetails">
+        <strong>Payment Details</strong>
+        <form id="paymentForm">
+          <strong>Card Details</strong>
+          <input id="nameOnCard" type="text" placeholder="Name on card" required>
+          <input id="cardNumber" type="number" placeholder="Card Number" required>
+          <input id="cvv" type="number" placeholder="cvv" required>
+          <strong>Billing Address</strong>
+          <input id="billingAddress" type="text" placeholder="Billing Address" required>
+        </form>
+      </div>
+      <div id="totalPrice">
+        <div>
+          <h3>Total Price</h3>
+          <h4>Price 18000</h4>
+        </div>
+        <button>Book Now</button>
+      </div>
+    </div>
+  </div>
+</body>
+<script type="module">
+  import carnavbar from '../scripts/components/carnavbar.js';
+  document.querySelector('.navbar').innerHTML = carnavbar();
+  import sidebar from '../scripts/components/sidebar.js';
+  document.querySelector('.sidebar').innerHTML = sidebar();
+  // import footer from './scripts/components/footer.js';
+  // document.querySelector('.footer').innerHTML = footer();
+  let mbtn = document.querySelector('#menubtn');
+  let bodcont = document.querySelector('#bodyCont');
+  let navbar1 = document.querySelector('.navbar');
+  let footer1 = document.querySelector('.footer');
+  let sidebar1 = document.querySelector('.sidebar');
+  let spanele = document.querySelectorAll('.sidebar-list')
+  let spanArray = Array.from(spanele);
+  spanArray.forEach(e => {
+      e.style.display = 'none';
+      sidebar1.style.width = '90px'
+      bodcont.style.left = '90px';
+      navbar1.style.left = '90px';
+      mbtn.addEventListener('click',()=>{
+          if(e.style.display=='block'){
+              e.style.display = 'none';
+              sidebar1.style.width = '90px'
+              bodcont.style.left = '110px';
+              navbar1.style.left = '90px';
+              // footer1.style.left = '90px';
+          }
+          else{
+              e.style.display = 'block';
+              sidebar1.style.width = '250px'
+              bodcont.style.left = '270px';
+              navbar1.style.left = '250px';
+              // footer1.style.left = '250px';
+          }
+      });
+  });
+</script>
+<script src="../scripts/booking.js"></script>
+</html>
