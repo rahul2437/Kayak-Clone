@@ -22,7 +22,7 @@
     <!-- JS -->
     <script type="text/javascript" src="//cdn.jsdelivr.net/jquery/1/jquery.min.js"></script>
     <script type="text/javascript" src="//cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
-    <script type="text/javascript" src="//cdn.jsdelivr.net/bootstrap.daterangepicker/2/daterangepicker.js"></script> -->
+    <script type="text/javascript" src="//cdn.jsdelivr.net/bootstrap.daterangepicker/2/daterangepicker.js"></script> 
     <!--calendar  -->
 
     <!-- Boxicons CDN Link -->
@@ -32,6 +32,8 @@
 
 <link rel="stylesheet" href="styles/index.css">
 
+<link rel="stylesheet" href="./styles/sign-in.css">
+<script src="./scripts/navbar.js"></script>
     <title>Hello, world!</title>
 
   
@@ -402,13 +404,19 @@
 
 
 
-
+            <div class="modal fade" id="mainmodal" tabindex="-1" role="dialog" aria-labelledby="mainmodalTitle" aria-hidden="true"></div>
 
 
             <div id="footer"></div>
         </div>
 
         <script type="module">
+   import signincode from './scripts/components/sign-in.component.js';
+  document.querySelector("#mainmodal").innerHTML = signincode();
+
+
+
+
             import navbar from './scripts/components/navbar.js';
             document.querySelector('.navbar').innerHTML = navbar();
             import sidebar from './scripts/components/sidebar.js';
@@ -454,11 +462,10 @@
 
 
 
-
-        <!-- Option 1: Bootstrap Bundle with Popper -->
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js"
+<!-- 
+               <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js"
             integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ"
-            crossorigin="anonymous"></script>
+            crossorigin="anonymous"></script> -->
 
 
 </body>
