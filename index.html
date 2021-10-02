@@ -94,10 +94,10 @@
                     <div id="search_dropdown" class="d-inline border rounded w-40 position-absolute">
 
 
-                        <h5 class="d-inline"><input id="index_input_city" oninput="search()"
-                                class=" w-100 form-control border-0 d-inline bg-secondary bg-gradient bg-opacity-25 "
+                        <h5 class="d-inline"><input id="index_input_city" oninput="debounce()"
+                                class="  w-100 form-control border-0 d-inline bg-secondary bg-gradient bg-opacity-25 "
                                 type="text" placeholder="From ?"> </input></h5>
-                            <div class="container_search"></div>
+                            <div id="search_container"class="container_search"></div>
 
                     </div>
 
@@ -139,7 +139,7 @@
                     </div>
                 </div>
                 <div class="col-5 pt-5">
-                    <div class="d-inline border rounded h5 py-1 px-2  card_email_input_div"><i
+                    <div class="d-inline border rounded h5 py-1 px-2 "><i
                             class="fas fa-envelope"></i><input class="border-0  ps-2"
                             placeholder="Enter your Email address" /></div>
                     <button id="" type="button" class=" btn-outline-black  ">Let's do this</button>
@@ -459,6 +459,7 @@
             div_cont.innerHTML = footer();
      
         </script>
+        
 
 </body>
 

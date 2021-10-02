@@ -17,7 +17,7 @@ function create_local_stg() {
     }
 
     localStorage.setItem('search_car', JSON.stringify(lcl_stg));
-    console.log(obj_city);
+   
 }
 
 
@@ -45,7 +45,7 @@ function Showdropdown() {
     else {
         x.className = "d-block";
         document.body.setAttribute('onclick', close_all);
-        console.log("hi att2");
+        
     }
 }
 function show_drop_dn() {
@@ -59,17 +59,18 @@ function show_drop_dn() {
         x.className = "d-block";
 
         document.body.setAttribute('onclick', close_all);
-        console.log("hi att1");
+      
     }
 
 }
 
 function driver_age() {
-    //console.log(e.target.labels[0].innerText);
+
     document.getElementById("driver_age").innerText = "26-65";
 
     document.getElementById("pop_div_search_bar_age").className = "d-none";
 }
+
 function custom_driver_age() {
     let val = document.getElementById("others").value;
 
@@ -83,18 +84,22 @@ function select(e) {
     x.innerText = e.target.innerText;
     document.querySelector("#pop_div_search_bar_drop_off").className = "d-none";
 }
+
 function close_all() {
 
-    console.log("hi closed");
+  
     
     document.querySelector("#pop_div_search_bar_drop_off").className = "d-none";
     document.getElementById("pop_div_search_bar_age").className = "d-none";
 }
+
 var obj_city;
 function display_val(el) {
+   
     obj_city = el;
-    console.log(el);
     document.getElementById("index_input_city").value = el.city + " " + el.state;
+    let div_cont = document.querySelector('.container_search');
+   
     div_cont.innerHTML = "";
 
 }
@@ -111,13 +116,33 @@ $(function () {
 
 
 
+var timerId;
+function debounce(){
+
+if(timerId){
+clearTimeout(timerId);
+}
+
+timerId=setTimeout(()=>{
+    search();
+},700);
+}
+
 
 
 async function search() {
     let input = document.getElementById("index_input_city").value;
-    let data = await get_cities(input);
+    console.log("null",input);
+    if(input!==""){
+        let data = await get_cities(input);
     
-    display(data);
+        display(data);
+    }
+    else{
+        let div_cont = document.querySelector('.container_search');
+
+        div_cont.innerHTML = "";
+}
 }
 
 
@@ -125,7 +150,7 @@ async function search() {
 async function get_cities(input) {
     let res = await fetch(`https://kayaak-clone-backend.herokuapp.com/cities?name=${input}`);
     let data = await res.json();
-    console.log(data);
+ 
     return data;
 }
 
@@ -135,9 +160,9 @@ async function get_cities(input) {
 
 
 function display(data) {
-//console.groupCollapsed(div_cont);
-var div_cont = document.querySelector('.container_search');
-console.log(div_cont);
+
+let div_cont = document.querySelector('.container_search');
+
     div_cont.innerHTML = "";
     data.forEach((el) => {
 
@@ -147,11 +172,12 @@ console.log(div_cont);
         a.addEventListener("click", () => {
             display_val(el);
         });
+    
         a.setAttribute("class", "anchor_none");
 
         let icon = document.createElement('i')
         icon.setAttribute("class", "fas fa-city float-start display-7 m-3");
-
+          
         let h3 = document.createElement('h3')
         h3.innerText = el.city;
         let p = document.createElement('p');
