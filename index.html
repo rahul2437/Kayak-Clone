@@ -5,41 +5,46 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home</title>
+    <title>Car Rentals: Find &amp; Book Self Drive Car Rental | KAYAK</title>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    
+
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet"
-    integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
-    
+        integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+
     <!-- calendar -->
     <!-- <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/bootstrap/3/css/bootstrap.css" /> -->
     <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/bootstrap.daterangepicker/2/daterangepicker.css" />
-    
+
     <!-- JS -->
     <script type="text/javascript" src="//cdn.jsdelivr.net/jquery/1/jquery.min.js"></script>
     <script type="text/javascript" src="//cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
     <script type="text/javascript" src="//cdn.jsdelivr.net/bootstrap.daterangepicker/2/daterangepicker.js"></script>
     <script src="https://kit.fontawesome.com/861556ecbc.js" crossorigin="anonymous"></script>
     <!--calendar  -->
-    
+
+
+
+
+
     <!-- Boxicons CDN Link -->
     <link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
     <!-- style.css link -->
     <link rel="stylesheet" href="styles/index.css">
     <link rel="stylesheet" href="styles/compostyles.css">
     <link rel="stylesheet" href="styles/sign-in.css">
-    
-    
-    <title>Car Rentals: Find &amp; Book Self Drive Car Rental | KAYAK</title>
-    
-    
+
+
+
+
+
     <script src="./scripts/index.js"></script>
 </head>
+
 <body>
-  <div class="navbar"></div>
+    <div class="navbar"></div>
     <div class="sidebar"></div>
     <div id="bodyCont" class="container_custom p-5">
         <div class="container-fluid ">
@@ -49,41 +54,42 @@
 
         <div id="index_cont_search" class="container-fluid ">
             <div id=" select_drop-off" class="d-inline" onclick="Showdropdown()">
-                <span class="index_main_heading" id="change_drop-off">Same drop-off</span>
-                <span>˅</span>
+                <span class="index_main_heading" id="change_drop-off">Same drop-off: </span>
+                <span><img class="w-1 " src="./images/down_arrow.png" alt=""></span>
             </div>
-            <div id="select_age"class="button d-inline ms-5" onclick="show_drop_dn()">
-                <span >Driver's age: -</span>
+            <div id="select_age" class="button d-inline ms-5" onclick="show_drop_dn()">
+                <span>Driver's age: -</span>
                 <span class="index_main_heading" id="driver_age"></spanid>
-                <span>˅</span>
+                    <span><img class="w-1 " src="./images/down_arrow.png" alt=""></span>
             </div>
         </div>
 
 
         <div id="pop_div_search_bar_age" class="d-none">
-              <button onclick="close_all()" class=" btn btn-close d-block float-end"></button>
-              <br>
-            <input onclick ="driver_age()"class="form-check-input m-1 " type="radio" name="flexRadioDefault" id="flexRadioDefault1"> <label id="26-65" class="form-check-label" for="flexRadioDefault1">
+            <button onclick="close_all()" class=" btn btn-close d-block float-end"></button>
+            <br>
+            <input onclick="driver_age()" class="form-check-input m-1 " type="radio" name="flexRadioDefault"
+                id="flexRadioDefault1"> <label id="26-65" class="form-check-label" for="flexRadioDefault1">
                 26-65
-              </label>
-                  <br>
-                  <hr>
-              <input  class="form-check-input m-1 " type="radio" name="flexRadioDefault" id="flexRadioDefault2" > 
-              <label class="form-check-label mx-5" for="flexRadioDefault2">
+            </label>
+            <br>
+            <hr>
+            <input class="form-check-input m-1 " type="radio" name="flexRadioDefault" id="flexRadioDefault2">
+            <label class="form-check-label mx-5" for="flexRadioDefault2">
                 Others
-              
-              <input id="others" oninput="custom_driver_age()" class="form-control d-inline w-50 m-1" type="text" >
-            </label>  
-            </div>
 
-         
-        
+                <input id="others" oninput="custom_driver_age()" class="form-control d-inline w-50 m-1" type="text">
+            </label>
+        </div>
+
+
+
         <div id="pop_div_search_bar_drop_off" class="d-none">
             <ul class="list-group">
                 <li onclick="select(event)" class="list-group-item list-group-item-action">Same drop-off</li>
                 <li onclick="select(event)" class="list-group-item list-group-item-action">Different drop-off</li>
-              
-                </ul>
+
+            </ul>
         </div>
 
 
@@ -97,7 +103,7 @@
                         <h5 class="d-inline"><input id="index_input_city" oninput="debounce()"
                                 class="  w-100 form-control border-0 d-inline bg-secondary bg-gradient bg-opacity-25 "
                                 type="text" placeholder="From ?"> </input></h5>
-                            <div id="search_container"class="container_search rounded-bottom"></div>
+                        <div id="search_container" class=" container_search rounded-bottom"></div>
 
                     </div>
 
@@ -112,7 +118,7 @@
                 </div>
 
                 <div class="col-1 ps-4">
-                    <div id="searchcars" onclick="create_local_stg()"class="rounded display-7 bg-warning ps-3">
+                    <div id="searchcars" onclick="create_local_stg()" class="rounded display-7 bg-warning ps-3">
                         <a id="cars" href="pages/cars.html">
                             <i class="fas fa-search"></i>
                         </a>
@@ -139,21 +145,23 @@
                     </div>
                 </div>
                 <div class="col-5 pt-5">
-                    <div class="d-inline border rounded h5 py-1 px-2 "><i
-                            class="fas fa-envelope"></i><form onsubmit="register_email()" class="d-inline">
-                                <input id="register_email_input" type="email" class="border-0  ps-2"
-                            placeholder="Enter your Email address" /></div>
-                    <button id="" type="submit" class=" btn-outline-black me-4  ">Let's do this</button>
-                            </form>
-                   <div id="loading_display" class="d-none"> 
-                       <div class="spinner-border spinner-border-sm" role="status">
-                        <span class="sr-only">Loading...</span>
-                      </div>
-                      <div class="spinner-grow spinner-grow-sm" role="status">
-                        <span class="sr-only">Loading...</span>
-                      </div>
+                    <div class="d-inline border rounded h5 py-1 px-2 "><i class="fas fa-envelope"></i>
+                        <form onsubmit="register_email()" class="d-inline">
+                            <input id="register_email_input" type="email" class="border-0  ps-2"
+                                placeholder="Enter your Email address" />
                     </div>
-                    <p id="completed_loading" class="d-none"><img id="tick_icon" src="images/tick.png">email is successfully registered.</p>
+                    <button id="" type="submit" class=" btn-outline-black me-4  ">Let's do this</button>
+                    </form>
+                    <div id="loading_display" class="d-none">
+                        <div class="spinner-border spinner-border-sm" role="status">
+                            <span class="sr-only">Loading...</span>
+                        </div>
+                        <div class="spinner-grow spinner-grow-sm" role="status">
+                            <span class="sr-only">Loading...</span>
+                        </div>
+                    </div>
+                    <p id="completed_loading" class="d-none"><img id="tick_icon" src="images/tick.png">email is
+                        successfully registered.</p>
                 </div>
             </div>
         </div>
@@ -168,7 +176,7 @@
 
         </div>
         <div class="container-fluid m-5 ">
-            <h2>Search rental cars by destination</h2>
+            <h3 class="index_main_heading">Search rental cars by destination</h3>
             <p>Find Car Rentals</p>
             <p class="me-5">
                 Save money on hire cars by searching for car hire deals on KAYAK. KAYAK searches for car hire deals on
@@ -177,45 +185,45 @@
                 faster at KAYAK.
 
             </p>
-            </div>
+        </div>
 
-            <div class="row">
-                
-                <div class="col-3">
-                    <a class="btn border-bottom w-90 m-3" data-bs-toggle="collapse" href="#collapseExample" role="button"
-                        aria-expanded="false" aria-controls="collapseExample">
-                        Karnataka car hire <img class="w-10 float-end"src="./images/down_arrow.png" alt="">
-                    </a>
+        <div class="row">
 
-
-                    <div class="collapse" id="collapseExample">
-                        <div class="card card-body">
-                            Some placeholder content for the collapse component. This panel is hidden by default but
-                            revealed
-                            when the user activates the relevant trigger.
-                        </div>
-                    </div>
-
-
-
-                    <a class="btn border-bottom w-90 m-3" data-bs-toggle="collapse" href="#collapseExample1" role="button"
-                        aria-expanded="false" aria-controls="collapseExample">
-                        Delhi car hire <img class="w-10 float-end"src="./images/down_arrow.png" alt="">
-                    </a>
-
-
-                    <div class="collapse" id="collapseExample1">
-                        <div class="card card-body">
-                           <a class =" anchor_none"href="">Greater Noida car hire</a>
-                           <a class =" anchor_none"href="">Faridabad car hire</a>
-                        </div>
-                    </div>
-
-
-
-                    <a class="btn border-bottom w-90 m-3" data-bs-toggle="collapse" href="#collapseExample2" role="button"
+            <div class="col-3">
+                <a class="btn border-bottom w-90 m-3" data-bs-toggle="collapse" href="#collapseExample" role="button"
                     aria-expanded="false" aria-controls="collapseExample">
-                    Karnataka car hire <img class="w-10 float-end"src="./images/down_arrow.png" alt="">
+                    Karnataka car hire <img class="w-10 float-end" src="./images/down_arrow.png" alt="">
+                </a>
+
+
+                <div class="collapse" id="collapseExample">
+                    <div class="card card-body">
+                        Some placeholder content for the collapse component. This panel is hidden by default but
+                        revealed
+                        when the user activates the relevant trigger.
+                    </div>
+                </div>
+
+
+
+                <a class="btn border-bottom w-90 m-3" data-bs-toggle="collapse" href="#collapseExample1" role="button"
+                    aria-expanded="false" aria-controls="collapseExample">
+                    Delhi car hire <img class="w-10 float-end" src="./images/down_arrow.png" alt="">
+                </a>
+
+
+                <div class="collapse" id="collapseExample1">
+                    <div class="card card-body">
+                        <a class=" anchor_none" href="">Greater Noida car hire</a>
+                        <a class=" anchor_none" href="">Faridabad car hire</a>
+                    </div>
+                </div>
+
+
+
+                <a class="btn border-bottom w-90 m-3" data-bs-toggle="collapse" href="#collapseExample2" role="button"
+                    aria-expanded="false" aria-controls="collapseExample">
+                    Karnataka car hire <img class="w-10 float-end" src="./images/down_arrow.png" alt="">
                 </a>
 
 
@@ -231,7 +239,7 @@
 
                 <a class="btn border-bottom w-90 m-3" data-bs-toggle="collapse" href="#collapseExample3" role="button"
                     aria-expanded="false" aria-controls="collapseExample">
-                    Delhi car hire  <img class="w-10 float-end"src="./images/down_arrow.png" alt="">
+                    Delhi car hire <img class="w-10 float-end" src="./images/down_arrow.png" alt="">
                 </a>
 
 
@@ -243,28 +251,28 @@
                     </div>
                 </div>
                 <a class="btn border-bottom w-90 m-3" data-bs-toggle="collapse" href="#collapseExample4" role="button"
-                aria-expanded="false" aria-controls="collapseExample">
-                Mumbai car hire <img class="w-10 float-end"src="./images/down_arrow.png" alt="">
-            </a>
-
-
-            <div class="collapse" id="collapseExample4">
-                <div class="card card-body">
-                    <a class =" anchor_none"href="#">Greater Noida car hire</a>
-                    <a class =" anchor_none"href="#">Faridabad car hire</a>
-                </div>
-            </div>
-
-
-
-
-
-
-                </div>
-                <div class="col-3">
-                    <a class="btn border-bottom w-90 m-3" data-bs-toggle="collapse" href="#collapseExample01" role="button"
                     aria-expanded="false" aria-controls="collapseExample">
-                    Karnataka car hire <img class="w-10 float-end"src="./images/down_arrow.png" alt="">
+                    Mumbai car hire <img class="w-10 float-end" src="./images/down_arrow.png" alt="">
+                </a>
+
+
+                <div class="collapse" id="collapseExample4">
+                    <div class="card card-body">
+                        <a class=" anchor_none" href="#">Greater Noida car hire</a>
+                        <a class=" anchor_none" href="#">Faridabad car hire</a>
+                    </div>
+                </div>
+
+
+
+
+
+
+            </div>
+            <div class="col-3">
+                <a class="btn border-bottom w-90 m-3" data-bs-toggle="collapse" href="#collapseExample01" role="button"
+                    aria-expanded="false" aria-controls="collapseExample">
+                    Karnataka car hire <img class="w-10 float-end" src="./images/down_arrow.png" alt="">
                 </a>
 
 
@@ -280,7 +288,7 @@
 
                 <a class="btn border-bottom w-90 m-3" data-bs-toggle="collapse" href="#collapseExample02" role="button"
                     aria-expanded="false" aria-controls="collapseExample">
-                    Delhi car hire <img class="w-10 float-end"src="./images/down_arrow.png" alt="">
+                    Delhi car hire <img class="w-10 float-end" src="./images/down_arrow.png" alt="">
                 </a>
 
 
@@ -295,52 +303,52 @@
 
 
                 <a class="btn border-bottom w-90 m-3" data-bs-toggle="collapse" href="#collapseExample03" role="button"
-                aria-expanded="false" aria-controls="collapseExample">
-                Karnataka car hire <img class="w-10 float-end"src="./images/down_arrow.png" alt="">
-            </a>
-
-
-            <div class="collapse" id="collapseExample03">
-                <div class="card card-body">
-                    Some placeholder content for the collapse component. This panel is hidden by default but
-                    revealed
-                    when the user activates the relevant trigger.
-                </div>
-            </div>
-
-
-
-            <a class="btn border-bottom w-90 m-3" data-bs-toggle="collapse" href="#collapseExample04" role="button"
-                aria-expanded="false" aria-controls="collapseExample">
-                Delhi car hire <img class="w-10 float-end"src="./images/down_arrow.png" alt="">
-            </a>
-
-
-            <div class="collapse" id="collapseExample04">
-                <div class="card card-body">
-                    Some placeholder content for the collapse component. This panel is hidden by default but
-                    revealed when
-                    the user activates the relevant trigger.
-                </div>
-            </div>
-            <a class="btn border-bottom w-90 m-3" data-bs-toggle="collapse" href="#collapseExample05" role="button"
-            aria-expanded="false" aria-controls="collapseExample">
-            Delhi car hire  <img class="w-10 float-end"src="./images/down_arrow.png" alt="">
-        </a>
-
-
-        <div class="collapse" id="collapseExample05">
-            <div class="card card-body">
-                Some placeholder content for the collapse component. This panel is hidden by default but
-                revealed when
-                the user activates the relevant trigger.
-            </div>
-        </div>
-                </div>
-                <div class="col-3">
-                    <a class="btn border-bottom w-90 m-3" data-bs-toggle="collapse" href="#collapseExample11" role="button"
                     aria-expanded="false" aria-controls="collapseExample">
-                    Karnataka car hire <img class="w-10 float-end"src="./images/down_arrow.png" alt="">
+                    Karnataka car hire <img class="w-10 float-end" src="./images/down_arrow.png" alt="">
+                </a>
+
+
+                <div class="collapse" id="collapseExample03">
+                    <div class="card card-body">
+                        Some placeholder content for the collapse component. This panel is hidden by default but
+                        revealed
+                        when the user activates the relevant trigger.
+                    </div>
+                </div>
+
+
+
+                <a class="btn border-bottom w-90 m-3" data-bs-toggle="collapse" href="#collapseExample04" role="button"
+                    aria-expanded="false" aria-controls="collapseExample">
+                    Delhi car hire <img class="w-10 float-end" src="./images/down_arrow.png" alt="">
+                </a>
+
+
+                <div class="collapse" id="collapseExample04">
+                    <div class="card card-body">
+                        Some placeholder content for the collapse component. This panel is hidden by default but
+                        revealed when
+                        the user activates the relevant trigger.
+                    </div>
+                </div>
+                <a class="btn border-bottom w-90 m-3" data-bs-toggle="collapse" href="#collapseExample05" role="button"
+                    aria-expanded="false" aria-controls="collapseExample">
+                    Delhi car hire <img class="w-10 float-end" src="./images/down_arrow.png" alt="">
+                </a>
+
+
+                <div class="collapse" id="collapseExample05">
+                    <div class="card card-body">
+                        Some placeholder content for the collapse component. This panel is hidden by default but
+                        revealed when
+                        the user activates the relevant trigger.
+                    </div>
+                </div>
+            </div>
+            <div class="col-3">
+                <a class="btn border-bottom w-90 m-3" data-bs-toggle="collapse" href="#collapseExample11" role="button"
+                    aria-expanded="false" aria-controls="collapseExample">
+                    Karnataka car hire <img class="w-10 float-end" src="./images/down_arrow.png" alt="">
                 </a>
 
 
@@ -356,7 +364,7 @@
 
                 <a class="btn border-bottom w-90 m-3" data-bs-toggle="collapse" href="#collapseExample12" role="button"
                     aria-expanded="false" aria-controls="collapseExample">
-                    Delhi car hire <img class="w-10 float-end"src="./images/down_arrow.png" alt="">
+                    Delhi car hire <img class="w-10 float-end" src="./images/down_arrow.png" alt="">
                 </a>
 
 
@@ -371,106 +379,219 @@
 
 
                 <a class="btn border-bottom w-90 m-3" data-bs-toggle="collapse" href="#collapseExample13" role="button"
-                aria-expanded="false" aria-controls="collapseExample">
-                Karnataka car hire <img class="w-10 float-end"src="./images/down_arrow.png" alt="">
-            </a>
+                    aria-expanded="false" aria-controls="collapseExample">
+                    Karnataka car hire <img class="w-10 float-end" src="./images/down_arrow.png" alt="">
+                </a>
 
 
-            <div class="collapse" id="collapseExample13">
-                <div class="card card-body">
-                    Some placeholder content for the collapse component. This panel is hidden by default but
-                    revealed
-                    when the user activates the relevant trigger.
+                <div class="collapse" id="collapseExample13">
+                    <div class="card card-body">
+                        Some placeholder content for the collapse component. This panel is hidden by default but
+                        revealed
+                        when the user activates the relevant trigger.
+                    </div>
                 </div>
-            </div>
 
 
 
-            <a class="btn border-bottom w-90 m-3" data-bs-toggle="collapse" href="#collapseExample14" role="button"
-                aria-expanded="false" aria-controls="collapseExample">
-                Delhi car hire <img class="w-10 float-end"src="./images/down_arrow.png" alt="">
-            </a>
+                <a class="btn border-bottom w-90 m-3" data-bs-toggle="collapse" href="#collapseExample14" role="button"
+                    aria-expanded="false" aria-controls="collapseExample">
+                    Delhi car hire <img class="w-10 float-end" src="./images/down_arrow.png" alt="">
+                </a>
 
 
-            <div class="collapse" id="collapseExample14">
-                <div class="card card-body">
-                    Some placeholder content for the collapse component. This panel is hidden by default but
-                    revealed when
-                    the user activates the relevant trigger.
+                <div class="collapse" id="collapseExample14">
+                    <div class="card card-body">
+                        Some placeholder content for the collapse component. This panel is hidden by default but
+                        revealed when
+                        the user activates the relevant trigger.
+                    </div>
                 </div>
-            </div>
-            <a class="btn border-bottom w-90 m-3" data-bs-toggle="collapse" href="#collapseExample15" role="button"
-            aria-expanded="false" aria-controls="collapseExample">
-            Delhi car hire <img class="w-10 float-end"src="./images/down_arrow.png" alt="">
-        </a>
+                <a class="btn border-bottom w-90 m-3" data-bs-toggle="collapse" href="#collapseExample15" role="button"
+                    aria-expanded="false" aria-controls="collapseExample">
+                    Delhi car hire <img class="w-10 float-end" src="./images/down_arrow.png" alt="">
+                </a>
 
 
-        <div class="collapse" id="collapseExample15">
-            <div class="card card-body">
-                Some placeholder content for the collapse component. This panel is hidden by default but
-                revealed when
-                the user activates the relevant trigger.
+                <div class="collapse" id="collapseExample15">
+                    <div class="card card-body">
+                        Some placeholder content for the collapse component. This panel is hidden by default but
+                        revealed when
+                        the user activates the relevant trigger.
+                    </div>
+                </div>
             </div>
         </div>
+
+        <div id="FAQ">
+            <h3 class="index_main_heading">Frequently asked questions.</h3>
+
+            <div class="row">
+                <div class="col-5">
+                    <a class="btn border-bottom w-90 m-3" data-bs-toggle="collapse" href="#Q1" role="button"
+                        aria-expanded="false" aria-controls="collapseExample">
+                        How does KAYAK find such low rental car prices? <img class="w-5 float-end"
+                            src="./images/down_arrow.png" alt="">
+                    </a>
+
+
+                    <div class="collapse" id="Q1">
+                        <div class="card card-body">
+                            KAYAK compares car hire prices from all major car hire companies such as Thrifty, Dollar,
+                            Enterprise, Hertz, Sixt, Payless and more to find you the best deal.
+                        </div>
+                    </div>
+
+
+
+
+                    <a class="btn border-bottom w-90 m-3" data-bs-toggle="collapse" href="#Q2" role="button"
+                        aria-expanded="false" aria-controls="collapseExample">
+                        What is special about comparing rental car deals on KAYAK? <img class="w-5 float-end"
+                            src="./images/down_arrow.png" alt="">
+                    </a>
+
+
+                    <div class="collapse" id="Q2">
+                        <div class="card card-body">
+                            KAYAK compares car hire prices from all major car hire companies such as Thrifty, Dollar,
+                            Enterprise, Hertz, Sixt, Payless and more to find you the best deal.
+                        </div>
+                    </div>
+
+
+
+
+                    <a class="btn border-bottom w-90 m-3" data-bs-toggle="collapse" href="#Q3" role="button"
+                        aria-expanded="false" aria-controls="collapseExample">
+                        HWhat is the minimum age to hire a car?<img class="w-5 float-end"
+                            src="./images/down_arrow.png" alt="">
+                    </a>
+
+
+                    <div class="collapse" id="Q3">
+                        <div class="card card-body">
+                            KAYAK compares car hire prices from all major car hire companies such as Thrifty, Dollar,
+                            Enterprise, Hertz, Sixt, Payless and more to find you the best deal.
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="col-5">
+
+                    <a class="btn border-bottom w-90 m-3" data-bs-toggle="collapse" href="#Q4" role="button"
+                        aria-expanded="false" aria-controls="collapseExample">
+                        How do I find the best car rental deals on KAYAK? <img class="w-5 float-end"
+                            src="./images/down_arrow.png" alt="">
+                    </a>
+
+
+                    <div class="collapse" id="Q4">
+                        <div class="card card-body">
+                            KAYAK compares car hire prices from all major car hire companies such as Thrifty, Dollar,
+                            Enterprise, Hertz, Sixt, Payless and more to find you the best deal.
+                        </div>
+                    </div>
+
+
+
+
+                    <a class="btn border-bottom w-90 m-3" data-bs-toggle="collapse" href="#Q5" role="button"
+                        aria-expanded="false" aria-controls="collapseExample">
+                        How does KAYAK find such low rental car prices? <img class="w-5 float-end"
+                            src="./images/down_arrow.png" alt="">
+                    </a>
+
+
+                    <div class="collapse" id="Q5">
+                        <div class="card card-body">
+                            KAYAK compares car hire prices from all major car hire companies such as Thrifty, Dollar,
+                            Enterprise, Hertz, Sixt, Payless and more to find you the best deal.
+                        </div>
+                    </div>
+
+
+
+
+                    <a class="btn border-bottom w-90 m-3" data-bs-toggle="collapse" href="#Q6" role="button"
+                        aria-expanded="false" aria-controls="collapseExample">
+                        How does KAYAK find such low rental car prices? <img class="w-5 float-end"
+                            src="./images/down_arrow.png" alt="">
+                    </a>
+
+
+                    <div class="collapse" id="Q6">
+                        <div class="card card-body">
+                            KAYAK compares car hire prices from all major car hire companies such as Thrifty, Dollar,
+                            Enterprise, Hertz, Sixt, Payless and more to find you the best deal.
+                        </div>
+                    </div>
+
+
+
+
                 </div>
             </div>
-
-
-
-            <div class="modal fade" id="mainmodal" tabindex="-1" role="dialog" aria-labelledby="mainmodalTitle" aria-hidden="true"></div>
-
-
-            <div id="footer"></div>
         </div>
 
-        <script type="module">
-   import signincode from './scripts/components/sign-in.component.js';
-  document.querySelector("#mainmodal").innerHTML = signincode();
+        <div class="modal fade" id="mainmodal" tabindex="-1" role="dialog" aria-labelledby="mainmodalTitle"
+            aria-hidden="true"></div>
+
+
+        <div id="footer"></div>
+    </div>
+
+    <script type="module">
+        import signincode from './scripts/components/sign-in.component.js';
+        document.querySelector("#mainmodal").innerHTML = signincode();
 
 
 
 
-            import navbar from './scripts/components/navbar.js';
-            document.querySelector('.navbar').innerHTML = navbar();
-            import sidebar from './scripts/components/sidebar.js';
-            document.querySelector('.sidebar').innerHTML = sidebar();
+        import navbar from './scripts/components/navbar.js';
+        document.querySelector('.navbar').innerHTML = navbar();
+        import sidebar from './scripts/components/sidebar.js';
+        document.querySelector('.sidebar').innerHTML = sidebar();
 
-            let mbtn = document.querySelector('#menubtn');
-            let bodcont = document.querySelector('#bodyCont');
-            let navbar1 = document.querySelector('.navbar');
-            let footer1 = document.querySelector('.footer');
-            let sidebar1 = document.querySelector('.sidebar');
-            let spanele = document.querySelectorAll('.sidebar-list')
-            let spanArray = Array.from(spanele);
-            spanArray.forEach(e => {
-                e.style.display = 'none';
-                sidebar1.style.width = '90px'
-                bodcont.style.left = '90px';
-                navbar1.style.left = '90px';
-                mbtn.addEventListener('click', () => {
-                    if (e.style.display == 'block') {
-                        e.style.display = 'none';
-                        sidebar1.style.width = '90px'
-                        bodcont.style.left = '110px';
-                        navbar1.style.left = '90px';
-                        footer1.style.left = '90px';
-                    }
-                    else {
-                        e.style.display = 'block';
-                        sidebar1.style.width = '250px'
-                        bodcont.style.left = '270px';
-                        navbar1.style.left = '250px';
-                        footer1.style.left = '250px';
-                    }
-                });
+        let mbtn = document.querySelector('#menubtn');
+        let bodcont = document.querySelector('#bodyCont');
+        let navbar1 = document.querySelector('.navbar');
+        let footer1 = document.querySelector('.footer');
+        let sidebar1 = document.querySelector('.sidebar');
+        let spanele = document.querySelectorAll('.sidebar-list')
+        let spanArray = Array.from(spanele);
+        spanArray.forEach(e => {
+            e.style.display = 'none';
+            sidebar1.style.width = '90px'
+            bodcont.style.left = '90px';
+            navbar1.style.left = '90px';
+            mbtn.addEventListener('click', () => {
+                if (e.style.display == 'block') {
+                    e.style.display = 'none';
+                    sidebar1.style.width = '90px'
+                    bodcont.style.left = '110px';
+                    navbar1.style.left = '90px';
+                    footer1.style.left = '90px';
+                }
+                else {
+                    e.style.display = 'block';
+                    sidebar1.style.width = '250px'
+                    bodcont.style.left = '270px';
+                    navbar1.style.left = '250px';
+                    footer1.style.left = '250px';
+                }
             });
+        });
 
-            import footer from "./scripts/components/footer.js";
-            let div_cont = document.querySelector('#footer');
-            div_cont.innerHTML = footer();
-     
-        </script>
-        
+        import footer from "./scripts/components/footer.js";
+        let div_cont = document.querySelector('#footer');
+        div_cont.innerHTML = footer();
+
+    </script>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
 
 </body>
 
