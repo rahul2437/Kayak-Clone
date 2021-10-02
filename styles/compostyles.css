@@ -57,6 +57,7 @@ body {
 
 .sidebar ul {
     margin-top: 20px;
+    padding: 0;
 }
 .sidebar ul hr{
     margin: 10px 0px;
@@ -95,10 +96,11 @@ body {
 
 /* BODY CSS */
 
-.container_custom {
+#bodyCont {
     position: absolute;
     top: 90px;
     right: 0;
+    margin-left: 200px;
 }
 
 

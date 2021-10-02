@@ -1,18 +1,25 @@
+const getcity = JSON.parse(localStorage.getItem('search_car'));
+
 async function getData() {
-  let city = document.getElementById('cityName').value;
+  let city = getcity.city.city;
   let res = await fetch(`https://kayaak-clone-backend.herokuapp.com/cities?name=${city}`);
   let data = await res.json();
-  cityid = data[0]._id;
+  cityid = getcity.city._id;
   let rescar = await fetch(`https://kayaak-clone-backend.herokuapp.com/cars/city/${cityid}`);
   let cardata = await rescar.json();
+  localStorage.setItem('cardata',JSON.stringify(cardata));
   let loc = data[0].pickup_address;
   showData(cardata,loc.slice(0,24));
 }
 
 function showData(array,loc) {
+  let data = JSON.parse(localStorage.getItem('cardata'));
+  console.log(data[0]);
   let carddiv = document.querySelector('#putCarData');
+  carddiv.innerHTML = '';
   let rule = document.createElement('hr');
-  array.forEach(e => {
+  for (let index = 0; index < 10; index++) {
+    const e = data[index];
     let carcard = document.createElement('div');
     carcard.setAttribute('class','carCard')
 
@@ -40,6 +47,16 @@ function showData(array,loc) {
     seats.setAttribute('id','Nseater');
     seats.innerHTML = `<i class="bx bxs-face"></i>`+e.passangers;
     
+    let fuel = document.createElement('li');
+    fuel.setAttribute('id','fueltype');
+    if(e.diesel == true){
+      fuel.innerHTML = 'Diesel';
+    }
+    else{
+      fuel.innerHTML = 'Petrol';
+    }
+
+    
     let luguage = document.createElement('li');
     luguage.setAttribute('id','Nluguage');
     luguage.innerHTML = '<i class="bx bxs-briefcase-alt"></i>'+e.large_bags;
@@ -53,7 +70,7 @@ function showData(array,loc) {
     gears.innerHTML = '<i class="bx bx-sitemap"></i>'+e.transmission;
     
     let ac = document.createElement('li');
-    if(e.air_conditioner){
+    if(e.air_conditioner == true){
       ac.setAttribute('id','ACstatus');
       ac.innerHTML = '<span class="material-icons">ac_unit</span>'
     }
@@ -89,14 +106,22 @@ function showData(array,loc) {
     
     let butt = document.createElement('button');
     butt.setAttribute('id','bookacar');
+    let carid = e._id;
+    butt.setAttribute('onclick',`${localStorage.setItem('bookedCar',JSON.stringify(carid))}`);
     butt.innerText = `Book car`;
     
     
     carimage.append(imgcar,imgcomp);
     cardetails.append(name,rule,carstats,pickup,rule,terms);
-    carstats.append(seats,luguage,doors,gears,ac);
+    carstats.append(seats,luguage,doors,gears,ac,fuel);
     carprice.append(cost,butt);
     carcard.append(carimage,cardetails,carprice);
     carddiv.append(carcard);
-  });
+  }
 }
+
+function storeData(x) {
+  console.log(x);
+}
+
+getData();
