@@ -102,3 +102,13 @@ body {
     transform: translateY(2px);
     border: 1px solid black;
 }
+.index_main_heading{
+    font-weight: 900;
+}
+
+#tick_icon{
+    width:6%;
+}
+.rounded_custom-5{
+    border-radius: 10%;
+}
