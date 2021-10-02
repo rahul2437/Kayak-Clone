@@ -40,22 +40,22 @@ function signincode(){
                         </div>
                         <div class="col-6">
                             <div class="border rounded">
-                                <img src="../images/Booking.Com-logo.png" alt="Booking.com Logo" class="img-fluid p-2 px-5">
+                                <img id="modal_booking_logo" src="../images/Booking.Com-logo.png" alt="Booking.com Logo" class="img-fluid p-2 px-5">
                             </div>
                         </div>
                         <div class="col-6">
                             <div class="border rounded">
-                                <img src="../images/fb logo.png" alt="Booking.com Logo" class="img-fluid p-2 px-5">
+                                <img id="modal_fb_logo" src="../images/fb logo.png" alt="Booking.com Logo" class="img-fluid p-2 px-5">
                             </div>
                         </div>
                         <div class="col-6 mt-2">
                             <div class="border rounded">
-                                <img src="../images/google logo.png" alt="Booking.com Logo" class="img-fluid p-2 px-5">
+                                <img id="modal_google_logo" src="../images/google logo.png" alt="Booking.com Logo" class="img-fluid p-2 px-5">
                             </div>
                         </div>
                         <div class="col-6 mt-2">
                             <div class="border rounded">
-                                <img src="../images/apple-logo.png" alt="Booking.com Logo" class="img-fluid p-2 px-5">
+                                <img id="modal_apple_logo" src="../images/apple-logo.png" alt="Booking.com Logo" class="img-fluid p-2 px-5">
                             </div>
                         </div>
                         <div class="col-12">
