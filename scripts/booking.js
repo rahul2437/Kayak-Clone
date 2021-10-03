@@ -8,6 +8,27 @@ cardata.forEach(e => {
 });
 
 
+const loginStatus = JSON.parse(localStorage.getItem('loginStatus'));
+if(loginStatus==null||loginStatus.isLogged==false){
+  document.getElementById('storeInfo').style.display = 'none';
+  document.getElementById('loginBFS').style.display = 'block';
+  document.getElementById('hirerDetails').style.display = 'none';
+  document.getElementById('paymentDetails').style.display = 'none';
+}
+else{
+  document.getElementById('storeInfo').style.display = 'block';
+  document.getElementById('loginBFS').style.display = 'none';
+  document.getElementById('firstName').value = loginStatus.first_name;
+  document.getElementById('firstName').setAttribute('disabled','');
+  document.getElementById('lastName').value = loginStatus.last_name;
+  document.getElementById('lastName').setAttribute('disabled','');
+  document.getElementById('eMail').value = loginStatus.user_email;
+  document.getElementById('eMail').setAttribute('disabled','');
+  document.getElementById('userPhone').value = loginStatus.phone_num;
+  document.getElementById('userPhone').setAttribute('disabled','')
+
+}
+
 function showData() {
   let cardiv = document.createElement('div');
   cardiv.setAttribute('id','bookedcardetails');
@@ -57,42 +78,22 @@ function showData() {
 }
 showData();
 
-document.getElementById('storeInfo').addEventListener('click',()=>{
-  Store();
+let TripData = JSON.parse(localStorage.getItem('search_car'));
+console.log(TripData);
+
+document.getElementById('storeInfo').addEventListener('click',async()=>{
+  let response = await fetch("https://kayaak-clone-backend.herokuapp.com/trips",{
+        method: "POST",
+        body: JSON.stringify({
+            car: carid,
+            user: loginStatus.user_id,
+            pick_up_date: TripData.pickup,
+            drop_off_date: TripData.drop
+        }),
+        headers:{"Content-Type": "application/json"}
+  });
+  setTimeout(()=>{
+    alert("Booking Successfull");
+    window.location.assign("../index.html")
+  },1000);
 });
-
-function Store(){
-  class storeUser {
-    constructor(Fname, Lname, email, phone) {
-      this.Fname = Fname,
-        this.Lname = Lname,
-        this.email = email,
-        this.phone = phone;
-    }
-  }
-  class storeCard {
-    constructor(cardName, cardNum,CVV,BillAdd) {
-      this.cardname = cardName,
-      this.cardnumber = cardNum,
-      this.cvv = CVV,
-      this.address = BillAdd
-    }
-  }
-  let Fname = document.getElementById('firstName').value;
-  let Lname = document.getElementById('lastName').value;
-  let email = document.getElementById('eMail').value;
-  let phone = document.getElementById('userPhone').value;
-  let userInfo = new storeUser(Fname,Lname,email,phone);
-  localStorage.setItem('CurrentUser',JSON.stringify(userInfo));
-  
-  
-  let Cardname = document.getElementById('nameOnCard').value;
-  let Cardnum = document.getElementById('cardNumber').value;
-  let cvv = document.getElementById('cvv').value;
-  let Billadd = document.getElementById('billingAddress').value;
-  let cardInfo = new storeCard(Cardname,Cardnum,cvv,Billadd);
-  localStorage.setItem('CurrentCard',JSON.stringify(cardInfo));
-
-
-
-}
