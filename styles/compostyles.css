@@ -87,6 +87,7 @@ body {
     line-height: 50px;
     border-radius: 12px;
     text-align: center;
+    font-size: x-large;
 }
 
 .sidebar-list {
@@ -153,3 +154,6 @@ body {
     color: var(--bgcolor);
     padding: 1rem 3rem;
 }
+input[type="email"]:invalid{
+    color:red;
+} 

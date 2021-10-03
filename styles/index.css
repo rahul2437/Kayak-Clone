@@ -102,3 +102,22 @@ body {
     transform: translateY(2px);
     border: 1px solid black;
 }
+.index_main_heading{
+    font-weight: 900;
+}
+
+#tick_icon{
+    width:6%;
+}
+.rounded_custom-5{
+    border-radius: 10%;
+}
+.w-1{
+    width:2%;
+}
+.container_search>a>h3{
+    margin-top: 1rem;
+}
+.w-5{
+    width:6%;
+}
