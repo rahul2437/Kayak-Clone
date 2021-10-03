@@ -1,4 +1,3 @@
-//<div class="modal fade" id="mainmodal" tabindex="-1" role="dialog" aria-labelledby="mainmodalTitle" aria-hidden="true">
 function signincode(){
     return `
     
@@ -13,7 +12,7 @@ function signincode(){
                             <img src="../images/Kayak_Logo.svg" class="img-fluid" alt="Kayak Logo">
                         </div>
                         <div>
-                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
                                 <span aria-hidden="true">&times;</span>
                             </button>
                         </div>
@@ -23,7 +22,7 @@ function signincode(){
                             <img src="../images/login-desktop.svg" class="img-fluid" alt="Desktop">
                         </div>
                         <div class="content-signin col-12">
-                            <h5 class="font-weight-bold">Sign in and save</h5>
+                            <h5 class="fw-bold">Sign in and save</h5>
                             <p>Track prices, organise travel plans and access member-only deals with your KAYAK account.</p>
                         </div>
                         <div class="email-login col-12 mb-3">
@@ -77,7 +76,7 @@ function signincode(){
                                 <input type="password" class="form-control border border-secondary mb-2" id="loginPass" placeholder="Password">
                                 <button type="submit" class="btn submit-btn mb-2" id="sign-in-btn" onclick="userLogin(event)">Sign in</button>
                                 Don't have an account?
-                                <span class="pointer-cursor text-default-color font-weight-bold sign-up-link" onclick="switchToSignUp()">Sign Up</span>
+                                <span class="pointer-cursor text-default-color fw-bold sign-up-link" onclick="switchToSignUp()">Sign Up</span>
                             </form>
                             
                         </div>
@@ -100,7 +99,7 @@ function signincode(){
                                 <input type="password" class="form-control border border-secondary mb-2" id="password" placeholder="Password">
                                 <button type="submit" class="btn submit-btn mb-2" id="sign-up-btn" onclick="userSignUp(event)">Sign up</button>
                                 Already have an account?
-                                <span class="pointer-cursor text-default-color font-weight-bold sign-in-link" onclick="switchToLogin()">Login here</span>
+                                <span class="pointer-cursor text-default-color fw-bold sign-in-link" onclick="switchToLogin()">Login here</span>
                             </form>
                             
                         </div>
