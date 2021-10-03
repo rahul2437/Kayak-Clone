@@ -86,10 +86,10 @@ function Store(){
   localStorage.setItem('CurrentUser',JSON.stringify(userInfo));
   
   
-  let Cardname = document.getElementById('firstName').value;
-  let Cardnum = document.getElementById('lastName').value;
-  let cvv = document.getElementById('eMail').value;
-  let Billadd = document.getElementById('userPhone').value;
+  let Cardname = document.getElementById('nameOnCard').value;
+  let Cardnum = document.getElementById('cardNumber').value;
+  let cvv = document.getElementById('cvv').value;
+  let Billadd = document.getElementById('billingAddress').value;
   let cardInfo = new storeCard(Cardname,Cardnum,cvv,Billadd);
   localStorage.setItem('CurrentCard',JSON.stringify(cardInfo));
 
