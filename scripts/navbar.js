@@ -143,5 +143,6 @@ function check_if_logedin_navbar(){
 function create_logout_dropdown(){
     let ul=document.createElement('ul');
     let li=document.createElement('li');
-
+    let ul=document.createElement('ul');
+    let li=document.createElement('li');
 }
