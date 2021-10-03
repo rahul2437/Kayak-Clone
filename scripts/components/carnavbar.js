@@ -11,9 +11,9 @@ function carnavbar() {
             <span class="vr"></span>
             <div class="favorites"><i class="bx bxs-heart"></i></div>
 
-            <div id="car_navbar_login_name" class="userLogIn"></div>
+            <div id="car_navbar_login_name" class="userLogIn_login"></div>
             <div id="car_navbar_login_button" class="userLogIn">
-              <button type="button" class="btn btn-light border border-dark px-4 py-2 " data-toggle="modal" data-target="#mainmodal">
+              <button type="button" class="btn btn-light border border-dark px-4 py-2 " data-bs-toggle="modal" data-bs-target="#mainmodal">
 
            
                 <span class="sign-in-icon">
