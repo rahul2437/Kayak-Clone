@@ -2,12 +2,11 @@
 
 setTimeout(function () {
     document.getElementById("footer_img").src = "./images/footer.JPG";
-    document.getElementById("modal_fb_logo").src = "./images/fb logo.png"
-    document.getElementById("modal_booking_logo").src = "./images/Booking.Com-logo.png"
-    document.getElementById("modal_google_logo").src = "./images/google logo.png"
-    // document.getElementById("footer_img").src =
-    // document.getElementById("footer_img").src =
-}, 1000);
+    document.getElementById("modal_fb_logo").src ="./images/fb logo.png"
+    document.getElementById("modal_booking_logo").src ="./images/Booking.Com-logo.png"
+    document.getElementById("modal_google_logo").src ="./images/google logo.png"
+    
+},1000);
 
 function create_local_stg() {
     let input_calendar = document.getElementById("input_calendar").value;
@@ -16,10 +15,12 @@ function create_local_stg() {
     var days = number_of_day();
     var lcl_stg = {
         num_days: days,
+
         city: obj_city,
         pickup: date1,
         drop: date2
     }
+
 
     localStorage.setItem('search_car', JSON.stringify(lcl_stg));
 
@@ -28,7 +29,9 @@ function create_local_stg() {
 
 function number_of_day() {
 
+    
     let input_calendar = document.getElementById("input_calendar").value;
+
     var date1 = new Date(input_calendar.slice(0, 11));
     var date2 = new Date(input_calendar.slice(22, 33));
 
@@ -137,8 +140,8 @@ function debounce() {
 
 async function search() {
     let input = document.getElementById("index_input_city").value;
-    console.log("null", input);
-    if (input !== "") {
+   
+    if(input!==""){
         let data = await get_cities(input);
 
         display(data);

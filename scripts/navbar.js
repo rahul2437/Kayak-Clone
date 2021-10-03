@@ -111,10 +111,77 @@ async function userSignUp(e) {
     }
 }
 
-// document.querySelector(".email-login>button").addEventListener('click',switchToLogin);
-// document.querySelector(".sign-in-link").addEventListener('click',switchToLogin);
-// document.querySelector(".back-btn").addEventListener('click',backToHome);
-// document.querySelector(".back-btn-sign-up").addEventListener('click',backToHome);
-// document.querySelector(".sign-up-link").addEventListener('click',switchToSignUp);
-// document.querySelector("#sign-in-btn").addEventListener('click',userLogin);
-// document.querySelector("#sign-up-btn").addEventListener('click',userSignUp);
+
+
+
+
+
+
+var user_data = JSON.parse(localStorage.getItem("loginStatus"));
+
+
+setTimeout(function () {
+    if (user_data != null) check_if_logedin_navbar();
+
+}, 300);
+
+function check_if_logedin_navbar() {
+
+    var status = user_data.isLogged;
+
+
+    if (status === true) {
+        let div_name = document.querySelector("#car_navbar_login_name");
+        var div_button = document.querySelector("#car_navbar_login_button");
+        div_name.style.width="120px";
+
+        div_button.setAttribute("class", "d-none");
+        let image_arrow = document.createElement("img");
+        image_arrow.src = "https://cdn.iconscout.com/icon/free/png-256/keyboard-down-arrow-1780093-1518654.png";
+        image_arrow.setAttribute("class", "d-inline");
+        image_arrow.style.width = "30%";
+        image_arrow.style.float = "right";
+        let p = document.createElement('p');
+        p.innerText = user_data.first_name + " " + user_data.last_name;
+        p.setAttribute("class", "d-inline");
+        p.style.float = "right";
+        p.style.padding = "2%";
+        div_name.onclick = () => {
+            let x = document.querySelector("#navbar_pop_up");
+            if (x.className === "width-20 position-absolute d-block") {
+                x.className = "d-none";
+
+            }
+            else {
+
+                x.className = "width-20 position-absolute d-block";
+
+            }
+        }
+        div_name.append(image_arrow, p);
+    }
+}
+create_logout_dropdown();
+function create_logout_dropdown() {
+
+    let list_cont = document.createElement('div');
+    list_cont.setAttribute("class", "list-group");
+    let button_home = document.createElement('button');
+    button_home.setAttribute("class", "list-group-item list-group-item-action");
+    button_home.innerText = "Home";
+    let button = document.createElement('button');
+    button.setAttribute("class", "list-group-item list-group-item-action");
+    button.innerText = "Logout";
+    button.onclick = () => {
+        var user_data = JSON.parse(localStorage.getItem("loginStatus"));
+        user_data.isLogged = false;
+        localStorage.setItem("loginStatus", JSON.stringify(user_data));
+
+
+        location.reload();
+
+    }
+    list_cont.append(button_home, button);
+    document.getElementById("navbar_pop_up").append(list_cont);
+
+}
