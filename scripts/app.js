@@ -14,7 +14,6 @@ async function getData() {
 
 function showData(array,loc) {
   let data = JSON.parse(localStorage.getItem('cardata'));
-  console.log(data[0]);
   let carddiv = document.querySelector('#putCarData');
   carddiv.innerHTML = '';
   let rule = document.createElement('hr');
@@ -107,7 +106,10 @@ function showData(array,loc) {
     let butt = document.createElement('button');
     butt.setAttribute('id','bookacar');
     let carid = e._id;
-    butt.setAttribute('onclick',`${localStorage.setItem('bookedCar',JSON.stringify(carid))}`);
+    butt.addEventListener('click',()=>{
+      localStorage.setItem('bookedCar',JSON.stringify(carid));
+      redirect();
+    });
     butt.innerText = `Book car`;
     
     
@@ -119,9 +121,7 @@ function showData(array,loc) {
     carddiv.append(carcard);
   }
 }
-
-function storeData(x) {
-  console.log(x);
-}
-
 getData();
+function redirect(){
+  window.location.href('youtube.com');
+}

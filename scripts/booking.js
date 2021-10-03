@@ -1,15 +1,18 @@
+
 const carid = JSON.parse(localStorage.getItem('bookedCar'));
-
-let data = JSON.parse(localStorage.getItem('cardata',carid));
-
-function searchData(data) {
+getData();
+console.log(carid);
+function getData() {
+  let data = JSON.parse(localStorage.getItem('cardata',carid));
   data.forEach(e => {
     if(e._id==carid) localStorage.setItem('showbookedCar',JSON.stringify(e));
   });
+
 }
 
 let carData = JSON.parse(localStorage.getItem('showbookedCar'));
 console.log(carData);
+
 
 function showData() {
   let cardiv = document.createElement('div');
