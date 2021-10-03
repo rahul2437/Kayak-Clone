@@ -157,3 +157,9 @@ body {
 input[type="email"]:invalid{
     color:red;
 } 
+.width-20{
+    width:20%;
+}
+#navbar_pop_up{
+    top: 50px;z-index:500;right:0;
+}
