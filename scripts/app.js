@@ -125,5 +125,6 @@ getData();
 function redirect(x){
   console.log('redirect:',x);
   localStorage.setItem('bookedCar',JSON.stringify(x));
+  localStorage.getItem('login')
   window.location.assign("booking.html")
 }
