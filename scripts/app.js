@@ -9,12 +9,11 @@ async function getData() {
   let cardata = await rescar.json();
   localStorage.setItem('cardata',JSON.stringify(cardata));
   let loc = data[0].pickup_address;
-  showData(cardata,loc.slice(0,24));
+  showData(loc.slice(0,24));
 }
 
-function showData(array,loc) {
+function showData(loc) {
   let data = JSON.parse(localStorage.getItem('cardata'));
-  console.log(data[0]);
   let carddiv = document.querySelector('#putCarData');
   carddiv.innerHTML = '';
   let rule = document.createElement('hr');
@@ -107,7 +106,10 @@ function showData(array,loc) {
     let butt = document.createElement('button');
     butt.setAttribute('id','bookacar');
     let carid = e._id;
-    butt.setAttribute('onclick',`${localStorage.setItem('bookedCar',JSON.stringify(carid))}`);
+    butt.addEventListener('click',()=>{
+      // localStorage.setItem('bookedCar',JSON.stringify(carid));
+      redirect(carid);
+    });
     butt.innerText = `Book car`;
     
     
@@ -119,9 +121,9 @@ function showData(array,loc) {
     carddiv.append(carcard);
   }
 }
-
-function storeData(x) {
-  console.log(x);
-}
-
 getData();
+function redirect(x){
+  console.log('redirect:',x);
+  localStorage.setItem('bookedCar',JSON.stringify(x));
+  window.location.assign("booking.html")
+}

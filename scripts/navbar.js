@@ -37,7 +37,14 @@ async function userLogin(e){
     let message = await response.json();
     console.log(message)
     if(message.status=="OK"){
-        localStorage.setItem("loginStatus",JSON.stringify({isLogged:true, user_id:message.user_id, user_name:message.user_name}))
+        localStorage.setItem("loginStatus",JSON.stringify({
+            isLogged:true,
+            user_id:message.user_id,
+            first_name:message.first_name,
+            last_name: message.last_name,
+            phone_num: message.phone_num,
+            user_email: message.user_email
+        }))
         signInBtn.textContent = "Login Successfull...";
         setTimeout(()=>{
             location.reload(); 
@@ -84,7 +91,10 @@ async function userSignUp(e){
         localStorage.setItem("loginStatus",JSON.stringify({
             isLogged: true,
             user_id: message.user._id,
-            user_name: message.user.first_name +" "+ message.user.last_name
+            first_name: message.user.first_name,
+            last_name:message.user.last_name,
+            phone_num: message.user.phone_num,
+            user_email: message.user.email
         }));
         location.reload(); 
     }else if(message.status=="error" && message.details=="User Already Exists"){
@@ -102,16 +112,36 @@ async function userSignUp(e){
 }
 
 
+
 var user_data= JSON.parse(localStorage.getItem("loginStatus"));
+console.log(user_data);
+
+setTimeout(function(){
 if(user_data!=null) check_if_logedin_navbar();
 
+},300);
 
 function check_if_logedin_navbar(){
     
-    var status= user_data[0].isLogged;
+    var status= user_data.isLogged;
  
  
      if(status===true){
-         document.getElementById("car_navbar_login_name").innerHTML="<p>"+user_data[0].user_name+" </p>";
-     }
+         let div_name =document.querySelector("#car_navbar_login_name");
+         div_name.innerHTML="";
+         let image_arrow=document.createElement("img");
+         image_arrow.src="https://cdn.iconscout.com/icon/free/png-256/keyboard-down-arrow-1780093-1518654.png";
+         image_arrow.setAttribute("class","d-inline");
+         image_arrow.style.width="15%";
+         let p=document.createElement('p');
+         p.innerText=user_data.first_name+" "+user_data.last_name;
+         p.setAttribute("class","d-inline");
+
+         div_name.append(p,image_arrow);
+        }
     }
+function create_logout_dropdown(){
+    let ul=document.createElement('ul');
+    let li=document.createElement('li');
+
+}
