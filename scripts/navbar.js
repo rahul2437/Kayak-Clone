@@ -101,10 +101,17 @@ async function userSignUp(e){
     }
 }
 
-// document.querySelector(".email-login>button").addEventListener('click',switchToLogin);
-// document.querySelector(".sign-in-link").addEventListener('click',switchToLogin);
-// document.querySelector(".back-btn").addEventListener('click',backToHome);
-// document.querySelector(".back-btn-sign-up").addEventListener('click',backToHome);
-// document.querySelector(".sign-up-link").addEventListener('click',switchToSignUp);
-// document.querySelector("#sign-in-btn").addEventListener('click',userLogin);
-// document.querySelector("#sign-up-btn").addEventListener('click',userSignUp);
+
+var user_data= JSON.parse(localStorage.getItem("loginStatus"));
+if(user_data!=null) check_if_logedin_navbar();
+
+
+function check_if_logedin_navbar(){
+    
+    var status= user_data[0].isLogged;
+ 
+ 
+     if(status===true){
+         document.getElementById("car_navbar_login_name").innerHTML="<p>"+user_data[0].user_name+" </p>";
+     }
+    }

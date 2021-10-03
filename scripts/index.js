@@ -5,8 +5,7 @@ setTimeout(function(){
     document.getElementById("modal_fb_logo").src ="./images/fb logo.png"
     document.getElementById("modal_booking_logo").src ="./images/Booking.Com-logo.png"
     document.getElementById("modal_google_logo").src ="./images/google logo.png"
-    // document.getElementById("footer_img").src =
-    // document.getElementById("footer_img").src =
+    
 },1000);
 
 function create_local_stg() {
