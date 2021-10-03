@@ -10,10 +10,15 @@ setTimeout(function(){
 },1000);
 
 function create_local_stg() {
+    let input_calendar = document.getElementById("input_calendar").value;
+    var date1 = new Date(input_calendar.slice(0, 11));
+    var date2 = new Date(input_calendar.slice(22, 33));
     var days = number_of_day();
     var lcl_stg = {
         num_days: days,
-        city: obj_city
+        city: obj_city,
+        pickup: date1,
+        drop: date2
     }
 
     localStorage.setItem('search_car', JSON.stringify(lcl_stg));
@@ -22,7 +27,7 @@ function create_local_stg() {
 
 
 function number_of_day() {
-
+    
     let input_calendar = document.getElementById("input_calendar").value;
     var date1 = new Date(input_calendar.slice(0, 11));
     var date2 = new Date(input_calendar.slice(22, 33));

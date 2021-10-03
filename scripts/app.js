@@ -1,5 +1,13 @@
 const getcity = JSON.parse(localStorage.getItem('search_car'));
-
+console.log(getcity.city);
+if(getcity.city==undefined){
+  document.getElementById('standardfilter').style.display = 'none';
+  document.getElementById('NoCarsFound').style.display = 'block';
+}
+else{
+  document.getElementById('NoCarsFound').style.display = 'none';
+  getData();
+}
 async function getData() {
   let city = getcity.city.city;
   let res = await fetch(`https://kayaak-clone-backend.herokuapp.com/cities?name=${city}`);
@@ -121,9 +129,11 @@ function showData(loc) {
     carddiv.append(carcard);
   }
 }
-getData();
+
 function redirect(x){
   console.log('redirect:',x);
   localStorage.setItem('bookedCar',JSON.stringify(x));
-  window.location.assign("booking.html")
+  let loginstatus = JSON.parse(localStorage.getItem('loginStatus'));
+  console.log(loginstatus);
+  window.location.assign("booking.html");
 }

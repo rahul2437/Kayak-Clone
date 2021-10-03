@@ -55,6 +55,7 @@ input::-webkit-inner-spin-button {
 }
 #bookedcardetails div div ul{
   display: flex;
+  padding: 0;
 }
 #bookedcardetails div div ul li{
   font-size: 15px;
