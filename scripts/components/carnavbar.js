@@ -7,11 +7,7 @@ function carnavbar() {
         </div>
         <div class="content">
             <div class="navItems"><a href="#">Business</a></div>
-<<<<<<< HEAD
-            <div class="navItems"><a href="trips.html">Trips</a></div>
-=======
             <div class="navItems"><a href="./trips.html">Trips</a></div>
->>>>>>> da112f458f1f91ff829f357f16d777cd9b787b9f
             <span class="vr"></span>
             <div class="favorites"><i class="bx bxs-heart"></i></div>
             <div class="userLogIn">
