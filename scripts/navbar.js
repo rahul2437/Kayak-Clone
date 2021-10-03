@@ -37,7 +37,14 @@ async function userLogin(e){
     let message = await response.json();
     console.log(message)
     if(message.status=="OK"){
-        localStorage.setItem("loginStatus",JSON.stringify({isLogged:true, user_id:message.user_id, user_name:message.user_name}))
+        localStorage.setItem("loginStatus",JSON.stringify({
+            isLogged:true,
+            user_id:message.user_id,
+            first_name:message.first_name,
+            last_name: message.last_name,
+            phone_num: message.phone_num,
+            user_email: message.user_email
+        }))
         signInBtn.textContent = "Login Successfull...";
         setTimeout(()=>{
             location.reload(); 
@@ -84,7 +91,10 @@ async function userSignUp(e){
         localStorage.setItem("loginStatus",JSON.stringify({
             isLogged: true,
             user_id: message.user._id,
-            user_name: message.user.first_name +" "+ message.user.last_name
+            first_name: message.user.first_name,
+            last_name:message.user.last_name,
+            phone_num: message.user.phone_num,
+            user_email: message.user.email
         }));
         location.reload(); 
     }else if(message.status=="error" && message.details=="User Already Exists"){
