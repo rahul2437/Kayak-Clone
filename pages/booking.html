@@ -1,26 +1,31 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Book your car</title>
+  <link rel="icon" type="image/svg+xml" href="../images/k.png">
+
   <link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
   <link rel="stylesheet" href="../styles/carsytles.css">
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <link rel="stylesheet" href="../styles/booking.css">
   <link rel="stylesheet" href="../styles/sign-in.css">
-   <!-- Bootstrap CSS -->
-   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">  
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
   <link rel="stylesheet" href="/styles/compostyles.css">
 </head>
+
 <body>
   <div class="navbar">
-        
+
   </div>
   <div class="sidebar"></div>
   <div id="bodyCont" class="containerBody">
-    
+
     <div id="showCarBookingData">
       <div id="bookedcardetails">
         <strong>Car Details</strong>
@@ -40,7 +45,7 @@
               <li id="fuelType">,&nbsp;</li>
             </ul>
           </div>
-          <div><img  id="carImage"></div>
+          <div><img id="carImage"></div>
         </div>
         <p id="pickup">Pick-up:</p>
         <hr>
@@ -71,30 +76,38 @@
       </div>
       <div id="totalPrice">
         <div>
-          <h3 >Total Price</h3>
+          <h3>Total Price</h3>
           <h4 id="Price">Price per day :- &#8377;</h4>
         </div>
         <button id="storeInfo">Book Now</button>
         <div class="userLogIn" id="loginBFS">
-          <button type="button" class="btn btn-light border border-dark px-4 py-2 " data-bs-toggle="modal" data-bs-target="#mainmodal">
+          <button type="button" class="btn btn-light border border-dark px-4 py-2 " data-bs-toggle="modal"
+            data-bs-target="#mainmodal">
             <span class="sign-in-icon">
-                <svg class="auth-account-icon" role="img" style="width:inherit;height:inherit;line-height:inherit;color:inherit;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200"><path d="M100 20c-44.183 0-80 35.817-80 80s35.817 80 80 80s80-35.817 80-80s-35.817-80-80-80zm0 15c56.025 0 85.793 66.777 48.312 108.431c-30.872-11.58-65.745-11.582-96.624 0C14.211 101.784 43.965 35 100 35zM76 97.151v-24.2c0-32.042 48-31.996 48 0v24.201c0 32.041-48 31.995-48-.001z"></path></svg>
+              <svg class="auth-account-icon" role="img"
+                style="width:inherit;height:inherit;line-height:inherit;color:inherit;"
+                xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
+                <path
+                  d="M100 20c-44.183 0-80 35.817-80 80s35.817 80 80 80s80-35.817 80-80s-35.817-80-80-80zm0 15c56.025 0 85.793 66.777 48.312 108.431c-30.872-11.58-65.745-11.582-96.624 0C14.211 101.784 43.965 35 100 35zM76 97.151v-24.2c0-32.042 48-31.996 48 0v24.201c0 32.041-48 31.995-48-.001z">
+                </path>
+              </svg>
             </span>
-            <strong>Sign in</strong> 
+            <strong>Sign in</strong>
           </button>
         </div>
       </div>
     </div>
     <div id="summary">
       <h2>Summary</h2>
-      <hr/>
+      <hr />
       <div>
         <strong>Total</strong>
         <h4 id="totalcarPrice">&#8377;</h4>
       </div>
     </div>
   </div>
-  <div class="modal fade" id="mainmodal" tabindex="-1" role="dialog" aria-labelledby="mainmodalTitle" aria-hidden="true"></div>
+  <div class="modal fade" id="mainmodal" tabindex="-1" role="dialog" aria-labelledby="mainmodalTitle"
+    aria-hidden="true"></div>
 
 </body>
 <script type="module">
@@ -112,26 +125,26 @@
   let spanele = document.querySelectorAll('.sidebar-list')
   let spanArray = Array.from(spanele);
   spanArray.forEach(e => {
-      e.style.display = 'none';
-      sidebar1.style.width = '90px'
-      bodcont.style.left = '90px';
-      navbar1.style.left = '90px';
-      mbtn.addEventListener('click',()=>{
-          if(e.style.display=='block'){
-              e.style.display = 'none';
-              sidebar1.style.width = '90px'
-              bodcont.style.left = '110px';
-              navbar1.style.left = '90px';
-              // footer1.style.left = '90px';
-          }
-          else{
-              e.style.display = 'block';
-              sidebar1.style.width = '250px'
-              bodcont.style.left = '270px';
-              navbar1.style.left = '250px';
-              // footer1.style.left = '250px';
-          }
-      });
+    e.style.display = 'none';
+    sidebar1.style.width = '90px'
+    bodcont.style.left = '90px';
+    navbar1.style.left = '90px';
+    mbtn.addEventListener('click', () => {
+      if (e.style.display == 'block') {
+        e.style.display = 'none';
+        sidebar1.style.width = '90px'
+        bodcont.style.left = '110px';
+        navbar1.style.left = '90px';
+        // footer1.style.left = '90px';
+      }
+      else {
+        e.style.display = 'block';
+        sidebar1.style.width = '250px'
+        bodcont.style.left = '270px';
+        navbar1.style.left = '250px';
+        // footer1.style.left = '250px';
+      }
+    });
   });
   import signincode from '../scripts/components/sign-in.component.js';
   document.querySelector("#mainmodal").innerHTML = signincode();
@@ -141,6 +154,6 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
 <!-- Option 1: Bootstrap Bundle with Popper -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ"
-    crossorigin="anonymous"></script>
+  integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ" crossorigin="anonymous"></script>
+
 </html>

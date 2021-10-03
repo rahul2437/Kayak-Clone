@@ -1,35 +1,37 @@
-input::-webkit-outer-spin-button,
-input::-webkit-inner-spin-button {
+input::-webkit-outer-spin-button, input::-webkit-inner-spin-button {
   -webkit-appearance: none;
   margin: 0;
 }
 
-.containerBody{
+.containerBody {
   display: flex;
 }
 
-#summary{
+#summary {
   height: 150px;
   display: flex;
   flex-direction: column;
 }
-#summary hr{
+
+#summary hr {
   width: 100%;
 }
-#summary div{
+
+#summary div {
   width: 100%;
   display: flex;
   justify-content: space-between;
 }
-#showCarBookingData{
+
+#showCarBookingData {
   /* background-color: aliceblue; */
 }
 
-#showCarBookingData div > strong{
+#showCarBookingData div>strong {
   font-size: 25px;
 }
 
-#bookedcardetails{
+#bookedcardetails {
   display: flex;
   flex-direction: column;
   padding: 1rem;
@@ -41,27 +43,32 @@ input::-webkit-inner-spin-button {
   margin: 1rem;
   box-shadow: 0 0 5px 0px #6e6e6e;
 }
-#bookedcardetails hr{
+
+#bookedcardetails hr {
   color: black;
   width: 100%;
   margin: 10px 0;
 }
-#bookedcardetails div{
+
+#bookedcardetails div {
   display: flex;
 }
-#bookedcardetails div div{
+
+#bookedcardetails div div {
   display: flex;
   flex-direction: column;
 }
-#bookedcardetails div div ul{
+
+#bookedcardetails div div ul {
   display: flex;
   padding: 0;
 }
-#bookedcardetails div div ul li{
+
+#bookedcardetails div div ul li {
   font-size: 15px;
 }
 
-#greentext li{
+#greentext li {
   background-color: #dcfaeb;
   color: #13663b;
   margin: 2px 5px;
@@ -70,7 +77,8 @@ input::-webkit-inner-spin-button {
   border-radius: 3px;
   font-weight: 700;
 }
-#carImage{
+
+#carImage {
   margin-left: 30px;
 }
 
@@ -78,7 +86,7 @@ input::-webkit-inner-spin-button {
   margin-right: 15px;
 }
 
-#hirerDetails{
+#hirerDetails {
   padding: 1rem;
   justify-content: space-around;
   align-items: flex-start;
@@ -88,18 +96,18 @@ input::-webkit-inner-spin-button {
   margin: 1rem;
   box-shadow: 0 0 5px 0px #6e6e6e;
 }
-#hirerForm{
+
+#hirerForm {
   display: grid;
   grid-template-columns: 1fr 1fr;
-
 }
+
 #hirerForm input {
   padding: 8px;
   margin: 10px;
 }
 
-
-#paymentDetails{
+#paymentDetails {
   /* display: flex;
   flex-direction: column; */
   padding: 1rem;
@@ -111,17 +119,21 @@ input::-webkit-inner-spin-button {
   margin: 1rem;
   box-shadow: 0 0 5px 0px #6e6e6e;
 }
+
 #paymentDetails input {
   padding: 8px;
   margin: 10px;
 }
-#paymentForm{
+
+#paymentForm {
   display: grid;
 }
-#paymentForm strong{
+
+#paymentForm strong {
   margin: 10px 3px;
   font-size: 18px;
 }
+
 #totalPrice {
   padding: 1rem;
   justify-content: space-around;
@@ -132,14 +144,15 @@ input::-webkit-inner-spin-button {
   margin: 1rem;
   box-shadow: 0 0 5px 0px #6e6e6e;
 }
-#totalPrice div{
+
+#totalPrice div {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   margin: 1rem;
 }
 
-#totalPrice button{
+#totalPrice button {
   margin: 1rem;
   font-size: 1.2rem;
   padding: 5px 10px;
@@ -150,22 +163,25 @@ input::-webkit-inner-spin-button {
   border-radius: 5px;
   margin-top: 5px;
 }
-#totalPrice button:hover{
+
+#totalPrice button:hover {
   background: linear-gradient(0.25turn, #b8591a, #bb2f16);
 }
 
-#carImage{
+#carImage {
   width: 180px;
 }
-#travellerimg{
+
+#travellerimg {
   width: 80px;
 }
-#pickup{
+
+#pickup {
   font-size: 18px;
   font-weight: bold;
 }
 
-#summary{
+#summary {
   padding: 1rem;
   justify-content: space-around;
   align-items: flex-start;
