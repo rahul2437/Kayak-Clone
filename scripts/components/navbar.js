@@ -8,7 +8,7 @@ function navbar() {
         </div>
         <div class="content">
             <div class="navItems"><a href="#">Business</a></div>
-            <div class="navItems"><a href="#">Trips</a></div>
+            <div class="navItems"><a href="./pages/trips.html">Trips</a></div>
             <span class="vr"></span>
             <div class="favorites"><i class="bx bxs-heart"></i></div>
             <div class="userLogIn">
