@@ -43,7 +43,7 @@ async function userLogin(e){
             first_name:message.first_name,
             last_name: message.last_name,
             phone_num: message.phone_num,
-            email: message.user_email
+            user_email: message.user_email
         }))
         signInBtn.textContent = "Login Successfull...";
         setTimeout(()=>{
