@@ -1,12 +1,12 @@
 
 
-setTimeout(function(){
+setTimeout(function () {
     document.getElementById("footer_img").src = "./images/footer.JPG";
-    document.getElementById("modal_fb_logo").src ="./images/fb logo.png"
-    document.getElementById("modal_booking_logo").src ="./images/Booking.Com-logo.png"
-    document.getElementById("modal_google_logo").src ="./images/google logo.png"
-    
-},1000);
+    document.getElementById("modal_fb_logo").src = "./images/fb logo.png"
+    document.getElementById("modal_booking_logo").src = "./images/Booking.Com-logo.png"
+    document.getElementById("modal_google_logo").src = "./images/google logo.png"
+
+}, 1000);
 
 function create_local_stg() {
     let input_calendar = document.getElementById("input_calendar").value;
@@ -23,13 +23,13 @@ function create_local_stg() {
 
 
     localStorage.setItem('search_car', JSON.stringify(lcl_stg));
-   
+
 }
 
 
 function number_of_day() {
 
-    
+
     let input_calendar = document.getElementById("input_calendar").value;
 
     var date1 = new Date(input_calendar.slice(0, 11));
@@ -53,7 +53,7 @@ function Showdropdown() {
     else {
         x.className = "d-block";
         document.body.setAttribute('onclick', close_all);
-        
+
     }
 }
 function show_drop_dn() {
@@ -67,7 +67,7 @@ function show_drop_dn() {
         x.className = "d-block";
 
         document.body.setAttribute('onclick', close_all);
-      
+
     }
 
 }
@@ -95,19 +95,19 @@ function select(e) {
 
 function close_all() {
 
-  
-    
+
+
     document.querySelector("#pop_div_search_bar_drop_off").className = "d-none";
     document.getElementById("pop_div_search_bar_age").className = "d-none";
 }
 
 var obj_city;
 function display_val(el) {
-   
+
     obj_city = el;
     document.getElementById("index_input_city").value = el.city + " " + el.state;
     let div_cont = document.querySelector('.container_search');
-   
+
     div_cont.innerHTML = "";
 
 }
@@ -125,32 +125,32 @@ $(function () {
 
 
 var timerId;
-function debounce(){
+function debounce() {
 
-if(timerId){
-clearTimeout(timerId);
-}
+    if (timerId) {
+        clearTimeout(timerId);
+    }
 
-timerId=setTimeout(()=>{
-    search();
-},700);
+    timerId = setTimeout(() => {
+        search();
+    }, 700);
 }
 
 
 
 async function search() {
     let input = document.getElementById("index_input_city").value;
-   
-    if(input!==""){
+
+    if (input !== "") {
         let data = await get_cities(input);
-    
+
         display(data);
     }
-    else{
+    else {
         let div_cont = document.querySelector('.container_search');
 
         div_cont.innerHTML = "";
-}
+    }
 }
 
 
@@ -158,7 +158,7 @@ async function search() {
 async function get_cities(input) {
     let res = await fetch(`https://kayaak-clone-backend.herokuapp.com/cities?name=${input}`);
     let data = await res.json();
- 
+
     return data;
 }
 
@@ -169,7 +169,7 @@ async function get_cities(input) {
 
 function display(data) {
 
-let div_cont = document.querySelector('.container_search');
+    let div_cont = document.querySelector('.container_search');
 
     div_cont.innerHTML = "";
     data.forEach((el) => {
@@ -180,40 +180,40 @@ let div_cont = document.querySelector('.container_search');
         a.addEventListener("click", () => {
             display_val(el);
         });
-    
+
         a.setAttribute("class", "anchor_none");
 
         let icon = document.createElement('i')
         icon.setAttribute("class", "fas fa-city float-start display-7 m-3");
-          
+
         let h3 = document.createElement('h3')
         h3.innerText = el.city;
         let p = document.createElement('p');
         p.innerText = el.state;
         p.setAttribute("class", "ms-5");
         let hr = document.createElement("hr");
-        hr.setAttribute("class","mb-0");
+        hr.setAttribute("class", "mb-0");
 
         a.append(icon, h3, p, hr);
 
         div_cont.append(a);
 
     });
-   
+
 }
 
-function register_email(){
-    let input=document.getElementById("register_email_input").value;
- 
-    if(input===""){
-      alert("enter email !")
-    }else{
-    let load_icon =document.getElementById("loading_display");
-    load_icon.className="d-block";
-    setTimeout(()=>{
-        load_icon.className="d-none";
-        document.getElementById("completed_loading").className="d-block";
-    },1500);
-}
+function register_email() {
+    let input = document.getElementById("register_email_input").value;
+
+    if (input === "") {
+        alert("enter email !")
+    } else {
+        let load_icon = document.getElementById("loading_display");
+        load_icon.className = "d-block";
+        setTimeout(() => {
+            load_icon.className = "d-none";
+            document.getElementById("completed_loading").className = "d-block";
+        }, 1500);
+    }
 }
 

@@ -1,4 +1,4 @@
-function signincode(){
+function signincode() {
     return `
     
     <div class="modal-dialog modal-dialog-centered" role="document">

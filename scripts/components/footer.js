@@ -1,5 +1,5 @@
 
-function footer(){
+function footer() {
 
     return ` <footer class="page_footer p-5 me-2 text-center">
     <div class="row h5 mb-3">

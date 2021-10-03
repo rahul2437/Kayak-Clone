@@ -1,7 +1,6 @@
-
 /* FONTS */
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
 
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
 :root {
     --bgcolor: #ffffff;
     --hover: #e6ebef;
@@ -10,6 +9,7 @@
     --footer: #212a30;
     --black: #000;
 }
+
 * {
     margin: 0;
     padding: 0;
@@ -22,7 +22,6 @@ body {
     width: 100%;
     position: relative;
 }
-
 
 /* SIDEBAR CSS */
 
@@ -59,9 +58,11 @@ body {
     margin-top: 20px;
     padding: 0;
 }
-.sidebar ul hr{
+
+.sidebar ul hr {
     margin: 10px 0px;
 }
+
 .sidebar ul li {
     height: 50px;
     margin: 0 5px;
@@ -94,7 +95,6 @@ body {
     display: block;
 }
 
-
 /* BODY CSS */
 
 #bodyCont {
@@ -104,9 +104,9 @@ body {
     margin-left: 50px;
 }
 
-
 /* NAVBAR CSS */
-.navbar{
+
+.navbar {
     position: fixed;
     top: 0;
     right: 0;
@@ -120,29 +120,34 @@ body {
     z-index: 100;
     background-color: var(--bgcolor);
 }
-.navItems a{
+
+.navItems a {
     text-decoration: none;
     color: var(--black);
     font-weight: 600;
 }
-.content{
+
+.content {
     display: flex;
     flex-direction: row;
     height:50px;
 }
-.content div{
+
+.content div {
     padding: 10px;
 }
-.vr{
+
+.vr {
     border: 1px solid var(--pcol);
 }
-.logo img{
+
+.logo img {
     width: 130px;
 }
 
 /* FOOTER CSS */
 
-.footer{
+.footer {
     background-color: var(--footer);
     height: 590px;
     position: fixed;
