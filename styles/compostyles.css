@@ -163,3 +163,6 @@ input[type="email"]:invalid{
 #navbar_pop_up{
     top: 50px;z-index:500;right:0;
 }
+#car_navbar_login_name{
+    max_width:120px;
+}

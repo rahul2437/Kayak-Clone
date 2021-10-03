@@ -132,7 +132,7 @@ timerId=setTimeout(()=>{
 
 async function search() {
     let input = document.getElementById("index_input_city").value;
-    console.log("null",input);
+   
     if(input!==""){
         let data = await get_cities(input);
     
