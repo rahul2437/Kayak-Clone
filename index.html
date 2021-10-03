@@ -529,52 +529,12 @@
                     </div>
 
 
-<<<<<<< HEAD
-
-=======
->>>>>>> 6dae4dba0a8df006fa526a572294cfd7fa121cfd
 
 
                 </div>
             </div>
         </div>
 
-<<<<<<< HEAD
-        <script type="module">
-            import navbar from './scripts/components/navbar.js';
-            document.querySelector('.navbar').innerHTML = navbar();
-            import sidebar from './scripts/components/sidebar.js';
-            document.querySelector('.sidebar').innerHTML = sidebar();
-
-            let mbtn = document.querySelector('#menubtn');
-            let bodcont = document.querySelector('#bodyCont');
-            let navbar1 = document.querySelector('.navbar');
-            let footer1 = document.querySelector('.footer');
-            let sidebar1 = document.querySelector('.sidebar');
-            let spanele = document.querySelectorAll('.sidebar-list')
-            let spanArray = Array.from(spanele);
-            spanArray.forEach(e => {
-                e.style.display = 'none';
-                sidebar1.style.width = '90px'
-                bodcont.style.left = '90px';
-                navbar1.style.left = '90px';
-                mbtn.addEventListener('click', () => {
-                    if (e.style.display == 'block') {
-                        e.style.display = 'none';
-                        sidebar1.style.width = '90px'
-                        bodcont.style.left = '110px';
-                        navbar1.style.left = '90px';
-                        footer1.style.left = '90px';
-                    }
-                    else {
-                        e.style.display = 'block';
-                        sidebar1.style.width = '250px'
-                        bodcont.style.left = '270px';
-                        navbar1.style.left = '250px';
-                        footer1.style.left = '250px';
-                    }
-                });
-=======
         <div class="modal fade" id="mainmodal" tabindex="-1" role="dialog" aria-labelledby="mainmodalTitle"
             aria-hidden="true"></div>
 
@@ -621,7 +581,6 @@
                     navbar1.style.left = '250px';
                     footer1.style.left = '250px';
                 }
->>>>>>> 6dae4dba0a8df006fa526a572294cfd7fa121cfd
             });
         });
 

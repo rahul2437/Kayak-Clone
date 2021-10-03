@@ -9,10 +9,10 @@ async function getData() {
   let cardata = await rescar.json();
   localStorage.setItem('cardata',JSON.stringify(cardata));
   let loc = data[0].pickup_address;
-  showData(cardata,loc.slice(0,24));
+  showData(loc.slice(0,24));
 }
 
-function showData(array,loc) {
+function showData(loc) {
   let data = JSON.parse(localStorage.getItem('cardata'));
   let carddiv = document.querySelector('#putCarData');
   carddiv.innerHTML = '';
@@ -107,8 +107,8 @@ function showData(array,loc) {
     butt.setAttribute('id','bookacar');
     let carid = e._id;
     butt.addEventListener('click',()=>{
-      localStorage.setItem('bookedCar',JSON.stringify(carid));
-      redirect();
+      // localStorage.setItem('bookedCar',JSON.stringify(carid));
+      redirect(carid);
     });
     butt.innerText = `Book car`;
     
@@ -122,6 +122,8 @@ function showData(array,loc) {
   }
 }
 getData();
-function redirect(){
-  window.location.href('youtube.com');
+function redirect(x){
+  console.log('redirect:',x);
+  localStorage.setItem('bookedCar',JSON.stringify(x));
+  window.location.assign("booking.html")
 }

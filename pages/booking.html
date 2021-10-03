@@ -5,45 +5,46 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Book your car</title>
-  <link rel="stylesheet" href="/styles/compostyles.css">
   <link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
   <link rel="stylesheet" href="../styles/carsytles.css">
-  <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
-      rel="stylesheet">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <link rel="stylesheet" href="../styles/booking.css">
+  <link rel="stylesheet" href="/styles/compostyles.css">
+  <link rel="stylesheet" href="../styles/sign-in.css">
 </head>
 <body>
   <div class="navbar">
         
   </div>
   <div class="sidebar"></div>
-  <div id="bodyCont" class="container">
+  <div id="bodyCont" class="containerBody">
     
     <div id="showCarBookingData">
       <div id="bookedcardetails">
         <strong>Car Details</strong>
         <div>
           <div>
-            <h2>Hyundai i10</h2>
+            <h2 id="carname"></h2>
             <ul id="greentext">
               <li>Unlimited Kilometers</li>
               <li>Free cancellation</li>
             </ul>
             <ul>
-              <li>4 people, </li>
-              <li>1 Bag, </li>
-              <li>4 Doors, </li>
-              <li>Manual transmission, </li>
-              <li>Air conditioning</li>
+              <li id="passengers">Seats:</li>
+              <li id="lugauge">, Large Bags:</li>
+              <li id="Ndoors">, Doors:</li>
+              <li id="transmission">, Transmission:</li>
+              <li id="ACstatus">,&nbsp;</li>
+              <li id="fuelType">,&nbsp;</li>
             </ul>
           </div>
-          <div id="carImage"><img src="https://www.kayak.co.in/h/run/api/image?width=178&crop=true&url=/carimages/generic/02_economy_coolgrey.png" alt=""></div>
+          <div><img  id="carImage"></div>
         </div>
-        <strong id="pickup">Pick-up:</strong>
+        <p id="pickup">Pick-up:</p>
         <hr>
         <div id="address">
-          <img src="https://www.kayak.co.in/rimg/provider-logos/cars/h/europcar.png?width=60&crop=true" alt="">
-          <p>Address</p>
+          <img id="travellerimg">
+          <p id="location"></p>
         </div>
       </div>
       <div id="hirerDetails">
@@ -68,10 +69,18 @@
       </div>
       <div id="totalPrice">
         <div>
-          <h3>Total Price</h3>
-          <h4>Price 18000</h4>
+          <h3 >Total Price</h3>
+          <h4 id="Price">Price per day :- &#8377;</h4>
         </div>
-        <button>Book Now</button>
+        <button id="storeInfo">Book Now</button>
+      </div>
+    </div>
+    <div id="summary">
+      <h2>Summary</h2>
+      <hr/>
+      <div>
+        <strong>Total</strong>
+        <h4 id="totalcarPrice">&#8377;</h4>
       </div>
     </div>
   </div>
@@ -114,4 +123,7 @@
   });
 </script>
 <script src="../scripts/booking.js"></script>
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
 </html>
