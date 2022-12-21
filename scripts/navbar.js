@@ -133,7 +133,7 @@ function check_if_logedin_navbar() {
     if (status === true) {
         let div_name = document.querySelector("#car_navbar_login_name");
         var div_button = document.querySelector("#car_navbar_login_button");
-        div_name.style.width="200px";
+        div_name.style.width = "200px";
 
         div_button.setAttribute("class", "d-none");
         let image_arrow = document.createElement("img");

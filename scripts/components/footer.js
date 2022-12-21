@@ -37,25 +37,22 @@ function footer() {
     <div class="row textsize-12 mx-auto">
         <div class="col-2 offset-2">Privacy</div>
         <div class="col-2">Terms & Conditions</div>
-        <div class="col-2">©2021 KAYAK</div>
+        <div class="col-2">©2021 KAYA</div>
 
     </div>
     <div class="row">
         <div class="col-12 text-center textsize-12 mx-auto"><span>Search flights, hotels, hire cars, travel guides and more
-                with KAYAK. KAYAK searches hundreds of other travel sites at once to get you the information you
-                need to make the right decisions. KAYAK also helps you find the right hotels for your needs.</span>
+                with KAYA. KAYA searches hundreds of other travel sites at once to get you the information you
+                need to make the right decisions. KAYA also helps you find the right hotels for your needs.</span>
         </div>
     </div>
     <div class="row m-3">
-        <div class="col-6 offset-2 text-center textsize-12 mx-auto">KAYAK is part of Booking Holdings Inc., the world leader
+        <div class="col-6 offset-2 text-center textsize-12 mx-auto">KAYA is part of Booking Holdings Inc., the world leader
             in online travel & related services.</div>
     </div>
     <div class="row">
         <div class="col-12 text-center"><i class="fab fa-facebook-square m-2"></i><i class="fab fa-twitter-square m-2"></i><i class="fab fa-youtube m-2"></i><i class="fab fa-instagram-square m-2"></i></div>
     
-    </div>
-    <div class="row">
-        <div class="col-12 text-center"><img id="footer_img" src="../images/footer.JPG" alt=""></div>
     </div>
 </footer>
 `

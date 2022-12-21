@@ -3,7 +3,7 @@ function navbar() {
   
         <div class="logo">
             <a href="index.html">
-            <img src="images/Kayak_Logo.svg" alt="Kayak Logo">
+            <img src="images/Kayak_Logo.svg" alt="Kaya Logo">
             </a>
         </div>
         <div class="content">
