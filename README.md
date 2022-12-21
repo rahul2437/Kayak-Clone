@@ -1,7 +1,7 @@
 ﻿# Kayaak-Clone
-At Kayak user can find and book cheap airline tickets, hotel rooms, holidays and car hire for Indian travellers with KAYAK.co.in
+At Kaya user can find and book cheap airline tickets, hotel rooms, holidays and car hire for Indian travellers with KAYA.co.in
 
-Me (Kanav), Rahul, and Abhinav created this clone of kayak.co.in, a travel agency website.
+Me (Kanav), Rahul, and Abhinav created this clone of kaya.co.in, a travel agency website.
 
 ## Technology used:
 **Frontend:**
